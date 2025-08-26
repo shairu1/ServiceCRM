@@ -16,8 +16,8 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Data\" />
-    <Folder Include="Services\" />
+    <Folder Include="Models\Settings\" />
+    <Folder Include="Views\Auth\" />
   </ItemGroup>
 
 </Project>

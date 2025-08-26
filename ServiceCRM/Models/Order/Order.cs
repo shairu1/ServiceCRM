@@ -1,5 +1,4 @@
-﻿using ServiceCRM.Models.ServiceCenter;
-using System.ComponentModel.DataAnnotations;
+﻿using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 
 namespace ServiceCRM.Models;

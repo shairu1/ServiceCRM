@@ -4,7 +4,7 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using ServiceCRM.Data;
 using ServiceCRM.Models.Auth;
-using ServiceCRM.Services;
+using ServiceCRM.Services.Cookie;
 
 namespace ServiceCRM.Controllers
 {
@@ -13,12 +13,12 @@ namespace ServiceCRM.Controllers
         private readonly UserManager<IdentityUser> _userManager;
         private readonly SignInManager<IdentityUser> _signInManager;
         private readonly ServiceCrmContext _context;
-        private readonly IUserServiceCookieManager _cookieManager;
+        private readonly CookieManager _cookieManager;
 
         public AuthController(UserManager<IdentityUser> userManager,
                       SignInManager<IdentityUser> signInManager,
                       ServiceCrmContext context,
-                      IUserServiceCookieManager cookieManager)
+                      CookieManager cookieManager)
         {
             _userManager = userManager;
             _signInManager = signInManager;
@@ -48,7 +48,7 @@ namespace ServiceCRM.Controllers
                 await _signInManager.SignInAsync(user, isPersistent: false);
 
                 // Проверяем и устанавливаем выбранный сервис в cookie
-                await _cookieManager.SetDefaultServiceCookieAsync(user, HttpContext);
+                await _cookieManager.SetDefaultServiceCenterCookieAsync(user, HttpContext);
 
                 return RedirectToAction("Index", "Home");
             }
@@ -83,7 +83,7 @@ namespace ServiceCRM.Controllers
                 if (user == null)
                     return View(model);
 
-                await _cookieManager.SetDefaultServiceCookieAsync(user, HttpContext);
+                await _cookieManager.SetDefaultServiceCenterCookieAsync(user, HttpContext);
 
                 return RedirectToAction("Index", "Home");
             }

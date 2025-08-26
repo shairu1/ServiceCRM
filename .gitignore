@@ -1,1 +1,45 @@
+# Visual Studio
 .vs/
+*.user
+*.suo
+*.userosscache
+*.sln.docstates
+
+# Build / Bin / Obj
+bin/
+obj/
+out/
+
+# Rider
+.idea/
+
+# Visual Studio Code
+.vscode/
+
+# NuGet
+*.nupkg
+# Если используешь packages folder вместо PackageReference
+packages/
+
+# EF Core Migrations
+# Если хочешь хранить миграции в Git, не добавляй их
+# Migrations/
+
+# Entity Framework Core DB files (для локальных тестов)
+*.mdf
+*.ldf
+*.sqlite
+
+# User-specific files
+*.log
+*.vsix
+
+# Resharper
+_ReSharper*/
+*.DotSettings.user
+
+# IIS Express
+IISExpress/
+
+# Publish
+*.Publish.xml

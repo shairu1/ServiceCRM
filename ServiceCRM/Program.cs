@@ -1,10 +1,17 @@
 using Microsoft.AspNetCore.Localization;
+using Microsoft.EntityFrameworkCore;
+using ServiceCRM.Data;
 using System.Globalization;
 
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.AddControllersWithViews();
+
+// DbContext (SQLite)
+var cs = builder.Configuration.GetConnectionString("DefaultConnection")!;
+builder.Services.AddDbContext<ServiceCrmContext>(options =>
+    options.UseSqlite(cs));
 
 // Добавляем сервисы локализации
 builder.Services.AddLocalization(options => options.ResourcesPath = "Resources");
