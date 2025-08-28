@@ -1,0 +1,211 @@
+﻿@model IEnumerable<ServiceCRM.Models.Order>
+@using ServiceCRM.Models
+
+@{
+    ViewData["Title"] = "Заказы";
+    var currentSearch = ViewData["CurrentSearch"] as string ?? "";
+    var currentStatus = ViewData["CurrentStatus"] as string ?? "";
+    var currentSort = ViewData["CurrentSort"] as string ?? "";
+}
+
+<div class="d-flex flex-column flex-md-row align-items-md-center justify-content-between mb-4">
+    <h2 class="mb-3 mb-md-0">Заказы</h2>
+    <a class="btn btn-outline-primary btn-lg" asp-action="Create">+ Создать заказ</a>
+</div>
+
+<form method="get" class="row g-3 mb-4">
+    <div class="col-md-4">
+        <input name="search" value="@currentSearch" class="form-control"
+               placeholder="Поиск №, устройство, марка, модель, неисправность, контрагент" />
+    </div>
+    <div class="col-md-3">
+        <select name="status" class="form-select">
+            <option value="">Все статусы</option>
+            @foreach (var s in Enum.GetValues(typeof(OrderStatus)).Cast<OrderStatus>())
+            {
+                <option value="@s" selected="@(currentStatus == s.ToString() ? "selected" : null)">@s</option>
+            }
+        </select>
+    </div>
+    <div class="col-md-3">
+        <select name="sort" class="form-select">
+            <option value="" selected="@(string.IsNullOrEmpty(currentSort) ? "selected" : null)">По дате ↓</option>
+            <option value="created_asc" selected="@(currentSort == "created_asc" ? "selected" : null)">По дате ↑</option>
+            <option value="sum_desc" selected="@(currentSort == "sum_desc" ? "selected" : null)">Сумма ↓</option>
+            <option value="sum_asc" selected="@(currentSort == "sum_asc" ? "selected" : null)">Сумма ↑</option>
+            <option value="status_asc" selected="@(currentSort == "status_asc" ? "selected" : null)">Статус ↑</option>
+            <option value="status_desc" selected="@(currentSort == "status_desc" ? "selected" : null)">Статус ↓</option>
+        </select>
+    </div>
+    <div class="col-md-2 d-grid">
+        <button class="btn btn-outline-success btn-lg">Применить</button>
+    </div>
+</form>
+
+<div class="table-responsive shadow-sm rounded-3">
+    <table class="table table-hover align-middle mb-0">
+        <thead>
+            <tr>
+                <th>№ заказа</th>
+                <th>Дата</th>
+                <th>Статус</th>
+                <th>Тип</th>
+                <th>Марка</th>
+                <th>Модель</th>
+                <th>Неисправность</th>
+                <th>Контрагент</th>
+                <th class="text-end">Сумма</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var o in Model)
+            {
+                <tr style="border-color: var(--table-tr-border-color)">
+                    <td>@o.Id</td>
+                    <td>@o.CreatedAt.ToString("dd.MM.yyyy HH:mm")</td>
+                    <td>@o.Status</td>
+                    <td>@o.DeviceType</td>
+                    <td>@o.Brand</td>
+                    <td>@o.Model</td>
+                    <td>@o.Issue</td>
+                    <td>@o.Counterparty</td>
+                    <td class="text-end">@o.Amount.ToString("N2")</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>
+
+<style>
+    :root {
+        --bg-color: #f6f8fa;
+        --text-color: #1f2328;
+        --text-muted: #656d76;
+        --border-color: #d0d7de;
+        --btn-primary: #3b82f6;
+        --btn-primary-hover: #2563eb;
+        --btn-success: #22c55e;
+        --btn-success-hover: #16a34a;
+        --btn-danger: #ef4444;
+        --btn-danger-hover: #dc2626;
+        --table-hover-bg: rgba(59,130,246,0.1);
+        --table-tr-border-color: #d0d7de;
+    }
+
+    body.dark-mode {
+        --bg-color: #0d1117;
+        --text-color: #c9d1d9;
+        --text-muted: #8b949e;
+        --border-color: #30363d;
+        --btn-primary: #3b82f6;
+        --btn-primary-hover: #1d4ed8;
+        --btn-success: #3fb950;
+        --btn-success-hover: #238636;
+        --btn-danger: #f85149;
+        --btn-danger-hover: #cf222e;
+        --table-hover-bg: rgba(59,130,246,0.2);
+        --table-tr-border-color: #30363d;
+    }
+
+    body {
+        background-color: var(--bg-color);
+        color: var(--text-color);
+        font-family: 'Inter', sans-serif;
+        transition: background-color 0.3s, color 0.3s;
+    }
+
+    .form-control, .form-select {
+        border-radius: 0.75rem;
+        padding: 0.65rem 1rem;
+        background-color: var(--bg-color);
+        border: 1px solid var(--border-color);
+        color: var(--text-color);
+        transition: background-color 0.3s, color 0.3s, border-color 0.3s;
+    }
+
+    body.dark-mode .form-control:focus,
+    body.dark-mode .form-select:focus {
+        background-color: #161b22;
+        color: #c9d1d9;
+        border-color: var(--btn-primary);
+        box-shadow: 0 0 0 0.2rem rgba(59,130,246,0.25);
+    }
+
+    body:not(.dark-mode) .form-control:focus,
+    body:not(.dark-mode) .form-select:focus {
+        background-color: #ffffff;
+        color: var(--text-color);
+        border-color: var(--btn-primary);
+        box-shadow: 0 0 0 0.2rem rgba(59,130,246,0.25);
+    }
+
+    .btn-primary, .btn-outline-primary, .btn-outline-success {
+        border-radius: 0.75rem;
+        padding: 0.65rem;
+        font-weight: 600;
+        font-size: 0.95rem;
+        transition: all 0.2s;
+    }
+
+    .btn-primary {
+        background-color: var(--btn-primary);
+        border: none;
+        color: #fff;
+    }
+
+        .btn-primary:hover {
+            background-color: var(--btn-primary-hover);
+        }
+
+    .btn-outline-primary {
+        color: var(--btn-primary);
+        border-color: var(--btn-primary);
+    }
+
+        .btn-outline-primary:hover {
+            background-color: var(--btn-primary);
+            color: #fff;
+        }
+
+    .btn-outline-success {
+        color: var(--btn-success);
+        border-color: var(--btn-success);
+    }
+
+        .btn-outline-success:hover {
+            background-color: var(--btn-success);
+            color: #fff;
+        }
+
+    .table-responsive {
+        border: 1px solid var(--border-color);
+        background-color: var(--bg-color);
+        transition: background-color 0.3s, border-color 0.3s;
+    }
+
+    .table {
+        border-collapse: collapse;
+    }
+
+    .table tr {
+        border-style: none;
+    }
+
+        .table th, .table td {
+            vertical-align: middle;
+            font-size: 0.95rem;
+            font-weight: 400;
+            color: var(--text-color);
+            border-top: 1px solid var(--border-color);
+        }
+
+        .table thead th {
+            background-color: var(--border-color);
+            color: var(--text-muted);
+            border-bottom: none;
+        }
+
+    .table-hover tbody tr:hover {
+        background-color: var(--table-hover-bg);
+    }
+</style>

@@ -1,0 +1,174 @@
+﻿@page
+@model ServiceCRM.Views.Services.IndexModel
+@using ServiceCRM.Models
+@{
+    ViewData["Title"] = "Сервисы";
+}
+
+<div class="d-flex flex-column flex-md-row align-items-md-center justify-content-between mb-4">
+    <h2 class="mx-auto">Сервисы</h2>
+    <a class="btn btn-outline-primary btn-lg" asp-page="./Create">+ Создать сервис</a>
+</div>
+
+<div class="table-responsive shadow-sm rounded-3">
+    <table class="table table-hover align-middle mb-0">
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Дата создания</th>
+                <th>Название</th>
+                <th>Администратор</th>
+                <th>Участники</th>
+                <th class="text-end">Действия</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var service in Model.Services)
+            {
+                <tr style="border-color: var(--table-tr-border-color)">
+                    <td>@service.Id</td>
+                    <td>@service.CreatedAt.ToString("dd.MM.yyyy HH:mm")</td>
+                    <td>@service.Name</td>
+                    <td>@service.Admin?.UserName</td>
+                    <td>
+                        @if (service.Members != null && service.Members.Any())
+                        {
+                            @string.Join(", ", service.Members.Select(m => m.UserName))
+                        }
+                        else
+                        {
+                            <span class="text-muted">—</span>
+                        }
+                    </td>
+                    <td class="text-end">
+                        @if (service.AdminId == Model.CurrentUserId)  // только админ
+                        {
+                            <a class="btn btn-sm btn-outline-success me-2" asp-page="./Edit" asp-route-id="@service.Id">
+                                Редактировать
+                            </a>
+                            <form method="post"
+                                  asp-page-handler="Delete"
+                                  asp-route-id="@service.Id"
+                                  style="display:inline;"
+                                  onsubmit="return confirm('Удалить сервис?');">
+                                <button type="submit" class="btn btn-sm btn-outline-danger">Удалить</button>
+                            </form>
+                        }
+                        else
+                        {
+                            <form method="post"
+                                  asp-page-handler="Join"
+                                  asp-route-id="@service.Id"
+                                  style="display:inline;">
+                                <button type="submit" class="btn btn-sm btn-outline-primary">
+                                    Присоединиться
+                                </button>
+                            </form>
+                        }
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>
+
+<style>
+    :root {
+        --bg-color: #f6f8fa;
+        --text-color: #1f2328;
+        --text-muted: #656d76;
+        --border-color: #d0d7de;
+        --btn-primary: #3b82f6;
+        --btn-primary-hover: #2563eb;
+        --btn-success: #22c55e;
+        --btn-success-hover: #16a34a;
+        --btn-danger: #ef4444;
+        --btn-danger-hover: #dc2626;
+        --table-hover-bg: rgba(59,130,246,0.1);
+        --table-tr-border-color: #d0d7de;
+    }
+
+    body.dark-mode {
+        --bg-color: #0d1117;
+        --text-color: #c9d1d9;
+        --text-muted: #8b949e;
+        --border-color: #30363d;
+        --btn-primary: #3b82f6;
+        --btn-primary-hover: #1d4ed8;
+        --btn-success: #3fb950;
+        --btn-success-hover: #238636;
+        --btn-danger: #f85149;
+        --btn-danger-hover: #cf222e;
+        --table-hover-bg: rgba(59,130,246,0.2);
+        --table-tr-border-color: #30363d;
+    }
+
+    body {
+        background-color: var(--bg-color);
+        color: var(--text-color);
+        font-family: 'Inter', sans-serif;
+        transition: background-color 0.3s, color 0.3s;
+    }
+
+    .btn-outline-primary, .btn-outline-success, .btn-outline-danger {
+        border-radius: 0.65rem;
+        padding: 0.45rem 0.9rem;
+        font-weight: 500;
+        font-size: 0.9rem;
+        transition: all 0.2s;
+    }
+
+    .btn-outline-primary {
+        color: var(--btn-primary);
+        border-color: var(--btn-primary);
+    }
+
+        .btn-outline-primary:hover {
+            background-color: var(--btn-primary);
+            color: #fff;
+        }
+
+    .btn-outline-success {
+        color: var(--btn-success);
+        border-color: var(--btn-success);
+    }
+
+        .btn-outline-success:hover {
+            background-color: var(--btn-success);
+            color: #fff;
+        }
+
+    .btn-outline-danger {
+        color: var(--btn-danger);
+        border-color: var(--btn-danger);
+    }
+
+        .btn-outline-danger:hover {
+            background-color: var(--btn-danger);
+            color: #fff;
+        }
+
+    .table-responsive {
+        border: 1px solid var(--border-color);
+        background-color: var(--bg-color);
+        transition: background-color 0.3s, border-color 0.3s;
+    }
+
+    .table th, .table td {
+        vertical-align: middle;
+        font-size: 0.95rem;
+        font-weight: 400;
+        color: var(--text-color);
+        border-top: 1px solid var(--border-color);
+    }
+
+    .table thead th {
+        background-color: var(--border-color);
+        color: var(--text-muted);
+        border-bottom: none;
+    }
+
+    .table-hover tbody tr:hover {
+        background-color: var(--table-hover-bg);
+    }
+</style>

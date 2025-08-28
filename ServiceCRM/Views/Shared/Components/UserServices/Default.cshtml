@@ -1,0 +1,68 @@
+﻿@model UserServicesViewModel
+
+@if (Model.Services.Any())
+{
+    <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle service-dropdown" href="#" id="servicesDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            @Model.SelectedService?.Name
+        </a>
+        <ul class="dropdown-menu service-dropdown-menu" aria-labelledby="servicesDropdown">
+            @foreach (var service in Model.Services)
+            {
+                <li>
+                    <a class="dropdown-item" asp-controller="Services" asp-action="Select" asp-route-id="@service.Id">
+                        @service.Name
+                    </a>
+                </li>
+            }
+        </ul>
+    </li>
+}
+
+
+<style>
+    /* Стили для dropdown сервисов */
+    .service-dropdown {
+        color: var(--navbar-text) !important;
+        transition: color 0.3s;
+    }
+
+        .service-dropdown:hover {
+            color: var(--btn-primary) !important;
+        }
+
+    .service-dropdown-menu {
+        background-color: var(--bg-color);
+        border: 1px solid var(--border-color);
+        border-radius: 0.5rem;
+        min-width: 200px;
+    }
+
+        .service-dropdown-menu .dropdown-item {
+            color: var(--text-color);
+            transition: background-color 0.2s, color 0.2s;
+        }
+
+            .service-dropdown-menu .dropdown-item:hover,
+            .service-dropdown-menu .dropdown-item:focus {
+                background-color: var(--btn-primary);
+                color: #fff;
+            }
+
+    /* Тёмная тема */
+    body.dark-mode .service-dropdown-menu {
+        background-color: #161b22;
+        border-color: var(--border-color);
+    }
+
+        body.dark-mode .service-dropdown-menu .dropdown-item {
+            color: var(--text-color);
+        }
+
+            body.dark-mode .service-dropdown-menu .dropdown-item:hover,
+            body.dark-mode .service-dropdown-menu .dropdown-item:focus {
+                background-color: var(--btn-primary);
+                color: #fff;
+            }
+
+</style>

@@ -1,8 +1,78 @@
 ﻿@{
-    ViewData["Title"] = "Home Page";
+    ViewData["Title"] = "Главная";
 }
 
-<div class="text-center">
-    <h1 class="display-4">Welcome</h1>
-    <p>Learn about <a href="https://learn.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+<div class="container mt-5">
+    <div class="d-flex align-items-center justify-content-between flex-wrap gap-4">
+        <!-- Левая часть -->
+        <div class="flex-grow-1" style="max-width: 650px;">
+            <h1 class="fw-bold mb-3 text-gradient">
+                ServiceCRM — CRM сервисного центра
+            </h1>
+
+            <p class="lead mb-2">Добро пожаловать в систему управления заказами!</p>
+            <p class="text-muted mb-4">
+                С помощью <strong>ServiceCRM</strong> вы можете легко управлять заказами,
+                отслеживать аналитику и вести учет клиентов.
+            </p>
+
+            <h5 class="fw-semibold mb-3">Основные возможности:</h5>
+            <ul class="list-unstyled feature-list mb-4">
+                <li>📋 Учёт заказов: устройство, марка/модель, неисправность, клиент, статус, сумма</li>
+                <li>🔍 Поиск и фильтрация заказов, сортировка по параметрам</li>
+                <li>➕ Добавление новых заказов через удобную форму</li>
+                <li>📝 Логирование действий (<code>wwwroot/data/logs/actions.txt</code>)</li>
+                <li>📊 Основы аналитики (страница «Аналитика»)</li>
+            </ul>
+
+            <div class="alert custom-alert rounded-3">
+                <strong>Совет:</strong> Начните с создания вашего первого сервиса в разделе
+                <a asp-controller="Settings" asp-action="Index" class="fw-semibold text-decoration-none">«Настройки»</a>.
+            </div>
+
+            <p class="mt-4 text-muted">
+                <strong>Авторы:</strong> ФИО, группа/кафедра
+            </p>
+        </div>
+
+        <!-- Правая часть -->
+        <div class="text-center flex-shrink-0">
+            <i class="bi bi-rocket-takeoff-fill hero-icon"></i>
+        </div>
+    </div>
 </div>
+
+<style>
+    /* Градиентный заголовок */
+    .text-gradient {
+        background: linear-gradient(90deg, var(--link-color), var(--text-color));
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+    }
+
+    /* Список возможностей */
+    .feature-list li {
+        margin-bottom: 0.6rem;
+        font-size: 0.95rem;
+        line-height: 1.5;
+    }
+
+    /* Большая иконка справа */
+    .hero-icon {
+        font-size: clamp(160px, 18vw, 260px);
+        color: var(--link-color);
+        opacity: 0.9;
+    }
+
+    /* Кастомный alert */
+    .custom-alert {
+        background-color: var(--bg-secondary);
+        border: 1px solid var(--border-color);
+        color: var(--text-color);
+        font-size: 0.9rem;
+    }
+
+    body.dark-mode .custom-alert {
+        background-color: #1c2128;
+    }
+</style>
