@@ -1,6 +1,10 @@
+using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Localization;
 using Microsoft.EntityFrameworkCore;
 using ServiceCRM.Data;
+using ServiceCRM.Services.Cookie;
+using ServiceCRM.Services.Logger;
+using ServiceCRM.Services.UserServiceCenterProvider;
 using System.Globalization;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -13,7 +17,29 @@ var cs = builder.Configuration.GetConnectionString("DefaultConnection")!;
 builder.Services.AddDbContext<ServiceCrmContext>(options =>
     options.UseSqlite(cs));
 
-// Добавляем сервисы локализации
+builder.Services
+    .AddIdentity<IdentityUser, IdentityRole>(options =>
+    {
+        options.Password.RequiredLength = 6;
+        options.Password.RequireNonAlphanumeric = false;
+        options.Password.RequireUppercase = false;
+    })
+    .AddEntityFrameworkStores<ServiceCrmContext>()
+    .AddDefaultTokenProviders();
+
+builder.Services.ConfigureApplicationCookie(options =>
+{
+    options.LoginPath = "/Auth/Login"; // путь к форме логина
+    options.ExpireTimeSpan = TimeSpan.FromMinutes(60);
+    options.SlidingExpiration = true;
+});
+
+// Добавляем сервисы
+builder.Services.AddSingleton<IActionLogger, ActionLogger>();
+builder.Services.AddScoped<IUserServiceCenterProvider, UserServiceCenterProvider>();
+builder.Services.AddScoped<ICookieManager, CookieManager>();
+
+
 builder.Services.AddLocalization(options => options.ResourcesPath = "Resources");
 
 // Поддерживаемые культуры
@@ -53,6 +79,7 @@ app.UseStaticFiles();
 app.UseRequestLocalization();
 app.UseRouting();
 
+app.UseAuthentication();
 app.UseAuthorization();
 
 app.MapControllerRoute(
