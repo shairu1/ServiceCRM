@@ -117,19 +117,25 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="Username" xml:space="preserve">
-    <value>Username</value>
+  <data name="LoginInputField" xml:space="preserve">
+    <value>Enter username</value>
   </data>
-  <data name="Password" xml:space="preserve">
-    <value>Password</value>
+  <data name="RegisterButton" xml:space="preserve">
+    <value>Register</value>
   </data>
-  <data name="RememberMe" xml:space="preserve">
-    <value>Remember me</value>
+  <data name="Subtitle" xml:space="preserve">
+    <value>Create a new account</value>
   </data>
-  <data name="UsernameRequired" xml:space="preserve">
-    <value>Required to fill in</value>
+  <data name="PasswordInputField" xml:space="preserve">
+    <value>Enter password</value>
   </data>
-  <data name="PasswordRequired" xml:space="preserve">
-    <value>Required to fill in</value>
+  <data name="PasswordConfirmationInputField" xml:space="preserve">
+    <value>Confirm password</value>
+  </data>
+  <data name="HaveAccountButton" xml:space="preserve">
+    <value>Do you already have an account? Enter</value>
+  </data>
+  <data name="Title" xml:space="preserve">
+    <value>Registration</value>
   </data>
 </root>

@@ -117,19 +117,70 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="Username" xml:space="preserve">
-    <value>Username</value>
+  <data name="ApplyButton" xml:space="preserve">
+    <value>Apply</value>
   </data>
-  <data name="Password" xml:space="preserve">
-    <value>Password</value>
+  <data name="ColumnDataTable" xml:space="preserve">
+    <value>Data</value>
   </data>
-  <data name="RememberMe" xml:space="preserve">
-    <value>Remember me</value>
+  <data name="ColumnOrderNumberTable" xml:space="preserve">
+    <value>Order number</value>
   </data>
-  <data name="UsernameRequired" xml:space="preserve">
-    <value>Required to fill in</value>
+  <data name="CreateOrderButton" xml:space="preserve">
+    <value>+ Create order</value>
   </data>
-  <data name="PasswordRequired" xml:space="preserve">
-    <value>Required to fill in</value>
+  <data name="SearchInput" xml:space="preserve">
+    <value>Search №, brand, model, issue, counterparty</value>
+  </data>
+  <data name="SortSelectAmountDown" xml:space="preserve">
+    <value>Amount ↓</value>
+  </data>
+  <data name="SortSelectAmountUp" xml:space="preserve">
+    <value>Amount ↑</value>
+  </data>
+  <data name="SortSelectDataDown" xml:space="preserve">
+    <value>Data ↓</value>
+  </data>
+  <data name="SortSelectDataUp" xml:space="preserve">
+    <value>Data ↑</value>
+  </data>
+  <data name="SortSelectStatusDown" xml:space="preserve">
+    <value>Status ↓</value>
+  </data>
+  <data name="SortSelectStatusUp" xml:space="preserve">
+    <value>Status ↑</value>
+  </data>
+  <data name="StatusSelect" xml:space="preserve">
+    <value>All statuses</value>
+  </data>
+  <data name="ColumnStatusTable" xml:space="preserve">
+    <value>Status</value>
+  </data>
+  <data name="ColumnTypeTable" xml:space="preserve">
+    <value>Type</value>
+  </data>
+  <data name="ColumnBrandTable" xml:space="preserve">
+    <value>Brand</value>
+  </data>
+  <data name="Subtitle" xml:space="preserve">
+    <value>Orders</value>
+  </data>
+  <data name="Title" xml:space="preserve">
+    <value>Orders</value>
+  </data>
+  <data name="ColumnModelTable" xml:space="preserve">
+    <value>Model</value>
+  </data>
+  <data name="ColumnIssueTable" xml:space="preserve">
+    <value>Issue</value>
+  </data>
+  <data name="ColumnAmountTable" xml:space="preserve">
+    <value>Amount</value>
+  </data>
+  <data name="ColumnCounterpartyTable" xml:space="preserve">
+    <value>Counterparty</value>
+  </data>
+  <data name="ColumnActionsTable" xml:space="preserve">
+    <value>Actions</value>
   </data>
 </root>

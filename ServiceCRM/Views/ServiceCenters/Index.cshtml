@@ -1,13 +1,12 @@
-﻿@page
-@model ServiceCRM.Views.Services.IndexModel
+﻿@model ServiceCRM.Models.ServiceCentersListViewModel
 @using ServiceCRM.Models
 @{
     ViewData["Title"] = "Сервисы";
 }
 
 <div class="d-flex flex-column flex-md-row align-items-md-center justify-content-between mb-4">
-    <h2 class="mx-auto">Сервисы</h2>
-    <a class="btn btn-outline-primary btn-lg" asp-page="./Create">+ Создать сервис</a>
+    <h2>Сервисы</h2>
+    <a class="btn btn-outline-primary btn-lg" asp-controller="ServiceCenters" asp-action="Create">+ Создать сервис</a>
 </div>
 
 <div class="table-responsive shadow-sm rounded-3">
@@ -23,7 +22,7 @@
             </tr>
         </thead>
         <tbody>
-            @foreach (var service in Model.Services)
+            @foreach (var service in Model.ServiceCenters)
             {
                 <tr style="border-color: var(--table-tr-border-color)">
                     <td>@service.Id</td>
@@ -33,7 +32,7 @@
                     <td>
                         @if (service.Members != null && service.Members.Any())
                         {
-                            @string.Join(", ", service.Members.Select(m => m.UserName))
+                            @string.Join(", ", service.Members.Select(m => m.User.UserName))
                         }
                         else
                         {
@@ -43,11 +42,16 @@
                     <td class="text-end">
                         @if (service.AdminId == Model.CurrentUserId)  // только админ
                         {
-                            <a class="btn btn-sm btn-outline-success me-2" asp-page="./Edit" asp-route-id="@service.Id">
+                            <a class="btn btn-sm btn-outline-success me-2"
+                               asp-controller="ServiceCenters"
+                               asp-action="Edit"
+                               asp-route-id="@service.Id">
                                 Редактировать
                             </a>
+
                             <form method="post"
-                                  asp-page-handler="Delete"
+                                  asp-controller="ServiceCenters"
+                                  asp-action="Delete"
                                   asp-route-id="@service.Id"
                                   style="display:inline;"
                                   onsubmit="return confirm('Удалить сервис?');">
@@ -57,11 +61,13 @@
                         else
                         {
                             <form method="post"
-                                  asp-page-handler="Join"
+                                  asp-controller="ServiceCenters"
+                                  asp-action="Leave"
                                   asp-route-id="@service.Id"
-                                  style="display:inline;">
+                                  style="display:inline;"
+                                  onsubmit="return confirm('Покинуть сервис?');">
                                 <button type="submit" class="btn btn-sm btn-outline-primary">
-                                    Присоединиться
+                                    Покинуть
                                 </button>
                             </form>
                         }

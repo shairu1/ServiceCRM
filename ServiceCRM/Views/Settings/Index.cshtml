@@ -1,6 +1,9 @@
 ﻿@model SettingsViewModel
+@using System.Globalization
+@inject Microsoft.AspNetCore.Mvc.Localization.IViewLocalizer Localizer
+
 @{
-    ViewData["Title"] = "Настройки профиля";
+    ViewData["Title"] = @Localizer["Title"];
 }
 
 @section Scripts {
@@ -34,6 +37,7 @@
 }
 
 <style>
+    /* Основные стили страницы (оставил без изменений) */
     :root {
         --bg-color: #f6f8fa;
         --text-color: #1f2328;
@@ -89,8 +93,8 @@
     }
 
     body.dark-mode .form-control:focus {
-        background-color: #161b22; /* тёмный фон фокусируемого поля */
-        color: #c9d1d9; /* текст в темной теме */
+        background-color: #161b22;
+        color: #c9d1d9;
         border-color: var(--btn-primary);
         box-shadow: 0 0 0 0.2rem rgba(59,130,246,0.25);
     }
@@ -149,6 +153,10 @@
             color: #fff;
         }
 
+    .btn-outline-secondary.dropdown-toggle.show .btn-outline-secondary:hover .btn-outline-secondary:focus {
+        background-color: #fff;
+    }
+
     #saveButtonContainer {
         overflow: hidden;
         max-height: 0;
@@ -164,13 +172,71 @@
     .text-muted {
         color: var(--text-muted) !important;
     }
+
+    /* Используем стили как для дропдауна сервисов */
+    /* Делаем дропдаун в стиле кнопок формы */
+    .dropdown-toggle {
+        border-radius: 0.75rem;
+        padding: 0.65rem 1rem;
+        font-size: 0.95rem;
+        color: var(--text-color);
+        background-color: var(--bg-color);
+        border: 1px solid var(--border-color);
+        text-align: left;
+        transition: background-color 0.3s, color 0.3s, border-color 0.3s;
+    }
+
+        .dropdown-toggle:focus {
+            box-shadow: 0 0 0 0.2rem rgba(59, 130, 246, 0.25);
+            background-color: antiquewhite;
+            border-color: var(--btn-primary);
+        }
+
+    .dropdown-menu {
+        border-radius: 0.75rem;
+        min-width: 100%;
+        background-color: var(--bg-color);
+        border: 1px solid var(--border-color);
+    }
+
+    .dropdown-item {
+        color: var(--text-color);
+        transition: background-color 0.2s, color 0.2s;
+    }
+
+        .dropdown-item:hover,
+        .dropdown-item:focus {
+            background-color: var(--btn-primary);
+            color: #fff;
+        }
+
+    body.dark-mode .dropdown-toggle {
+        background-color: #161b22;
+        color: #c9d1d9;
+        border-color: #30363d;
+    }
+
+    body.dark-mode .dropdown-menu {
+        background-color: #161b22;
+        border-color: #30363d;
+    }
+
+    body.dark-mode .dropdown-item {
+        color: #c9d1d9;
+    }
+
+        body.dark-mode .dropdown-item:hover,
+        body.dark-mode .dropdown-item:focus {
+            background-color: var(--btn-primary);
+            color: #fff;
+        }
 </style>
 
-<div class="container mt-5 mb-5 d-flex justify-content-center">
+<div class="container mt-3 mb-5 d-flex justify-content-center">
     <div class="col-md-4">
 
         <div class="text-center">
-            <h3>Настройки профиля</h3>
+            <h3>@Localizer["Subtitle"]</h3>
         </div>
 
         @if (TempData["Message"] != null)
@@ -180,35 +246,62 @@
 
         <form asp-action="Index" method="post" class="needs-validation" novalidate id="settingsForm">
             <div class="mb-3">
-                <label asp-for="Username" class="form-label">Логин</label>
+                <label asp-for="Username" class="form-label">@Localizer["UsernameLabel"]</label>
                 <input asp-for="Username" class="form-control" />
                 <span asp-validation-for="Username" class="text-danger"></span>
             </div>
 
             <div class="mb-3">
-                <label asp-for="Email" class="form-label">Email</label>
+                <label asp-for="Email" class="form-label">@Localizer["EmailLabel"]</label>
                 <input asp-for="Email" class="form-control" type="email" />
                 <span asp-validation-for="Email" class="text-danger"></span>
             </div>
 
             <div class="mb-3">
-                <label asp-for="PhoneNumber" class="form-label">Телефон</label>
+                <label asp-for="PhoneNumber" class="form-label">@Localizer["PhoneNumberLabel"]</label>
                 <input asp-for="PhoneNumber" class="form-control" type="tel" />
                 <span asp-validation-for="PhoneNumber" class="text-danger"></span>
             </div>
 
+            <div class="mb-3">
+                <label class="form-label">@Localizer["LanguageLabel"]</label>
+                <div class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle service-dropdown w-100 text-start" href="#" id="languageDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                        @(
+                            CultureInfo.CurrentCulture.Name switch
+                            {
+                                "ru" => "Русский",
+                                "en" => "English",
+                                _ => "Русский"
+                            }
+                        )
+                    </a>
+                    <ul class="dropdown-menu service-dropdown-menu w-100" aria-labelledby="languageDropdown">
+                        <li>
+                            <a class="dropdown-item" asp-controller="Language" asp-action="Set" asp-route-culture="ru" asp-route-returnUrl="@Context.Request.Path">
+                                Русский
+                            </a>
+                        </li>
+                        <li>
+                            <a class="dropdown-item" asp-controller="Language" asp-action="Set" asp-route-culture="en" asp-route-returnUrl="@Context.Request.Path">
+                                English
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
             <div class="d-grid mb-3" id="saveButtonContainer">
-                <button type="submit" class="btn btn-primary">Сохранить изменения</button>
+                <button type="submit" class="btn btn-primary">@Localizer["SaveButton"]</button>
             </div>
 
             <div class="d-flex justify-content-between mb-3 gap-2">
-                <a asp-action="ChangePassword" class="btn btn-outline-primary flex-fill">Сменить пароль</a>
-                <a asp-action="CreateService" class="btn btn-outline-success flex-fill">Создать новый сервис</a>
+                <a asp-action="ChangePassword" class="btn btn-outline-primary flex-fill">@Localizer["ChangePasswordButton"]</a>
             </div>
         </form>
 
         <form asp-action="Logout" method="post" class="mt-3">
-            <button type="submit" class="btn btn-outline-danger w-100">Выйти</button>
+            <button type="submit" class="btn btn-outline-danger w-100">@Localizer["LogoutButton"]</button>
         </form>
 
     </div>

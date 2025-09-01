@@ -117,19 +117,31 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="Username" xml:space="preserve">
+  <data name="ChangePasswordButton" xml:space="preserve">
+    <value>Change password</value>
+  </data>
+  <data name="EmailLabel" xml:space="preserve">
+    <value>Email</value>
+  </data>
+  <data name="LanguageLabel" xml:space="preserve">
+    <value>Interface language</value>
+  </data>
+  <data name="LogoutButton" xml:space="preserve">
+    <value>Logout</value>
+  </data>
+  <data name="PhoneNumberLabel" xml:space="preserve">
+    <value>Phone number</value>
+  </data>
+  <data name="SaveButton" xml:space="preserve">
+    <value>Save changes</value>
+  </data>
+  <data name="Subtitle" xml:space="preserve">
+    <value>Profile settings</value>
+  </data>
+  <data name="Title" xml:space="preserve">
+    <value>Profile settings</value>
+  </data>
+  <data name="UsernameLabel" xml:space="preserve">
     <value>Username</value>
-  </data>
-  <data name="Password" xml:space="preserve">
-    <value>Password</value>
-  </data>
-  <data name="RememberMe" xml:space="preserve">
-    <value>Remember me</value>
-  </data>
-  <data name="UsernameRequired" xml:space="preserve">
-    <value>Required to fill in</value>
-  </data>
-  <data name="PasswordRequired" xml:space="preserve">
-    <value>Required to fill in</value>
   </data>
 </root>

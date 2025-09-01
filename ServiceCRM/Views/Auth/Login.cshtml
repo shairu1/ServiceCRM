@@ -1,7 +1,8 @@
 ﻿@model ServiceCRM.Models.Auth.LoginViewModel
+@inject Microsoft.AspNetCore.Mvc.Localization.IViewLocalizer Localizer
 
 @{
-    ViewData["Title"] = "Вход";
+    ViewData["Title"] = @Localizer["Title"];
     Layout = null;
 }
 
@@ -47,18 +48,20 @@
             display: flex;
             align-items: center;
             justify-content: center;
-            padding: 1rem;
             transition: background-color 0.3s, color 0.3s;
+        }
+
+        .login-wrapper {
+            position: relative;
+            width: 100%;
+            max-width: 420px;
         }
 
         .login-card {
             background-color: var(--card-bg);
             border-radius: 1.25rem;
-            box-shadow: 0 12px 35px rgba(0, 0, 0, 0.08);
+            box-shadow: 0 12px 35px rgba(0,0,0,0.08);
             padding: 2rem;
-            max-width: 420px;
-            width: 100%;
-            /* убрали hover-подпрыгивание */
             transition: background-color 0.3s, color 0.3s;
         }
 
@@ -71,16 +74,47 @@
         .form-control {
             border-radius: 0.75rem;
             padding: 0.75rem 1rem;
-            background-color: var(--bg-color);
+            background-color: var(--card-bg);
             border: 1px solid var(--border-color);
             color: var(--text-color);
-            transition: background-color 0.3s, color 0.3s, border-color 0.3s;
+            transition: all 0.3s;
         }
 
-            .form-control:focus {
-                border-color: var(--btn-primary);
-                box-shadow: 0 0 0 0.2rem rgba(59, 130, 246, 0.25);
-            }
+        body.dark-mode .form-control {
+            background-color: #161b22;
+            color: #c9d1d9;
+        }
+
+        .form-control:focus {
+            border-color: var(--btn-primary);
+            box-shadow: 0 0 0 0.2rem rgba(59,130,246,0.25);
+        }
+
+        .form-check-input {
+            -webkit-appearance: none;
+            -moz-appearance: none;
+            appearance: none;
+            width: 1.25rem;
+            height: 1.25rem;
+            border: 1px solid var(--border-color);
+            border-radius: 0.25rem;
+            background-color: var(--card-bg);
+            display: inline-block;
+            position: relative;
+            vertical-align: middle;
+            cursor: pointer;
+            transition: background-color 0.3s, border-color 0.3s;
+            margin-top: 0;
+        }
+
+        body.dark-mode .form-check-input {
+            background-color: var(--card-bg);
+            border-color: var(--border-color);
+        }
+
+        .form-check-label {
+            color: var(--text-color);
+        }
 
         .btn-primary {
             border-radius: 0.75rem;
@@ -89,74 +123,213 @@
             font-size: 1rem;
             background-color: var(--btn-primary);
             border: none;
-            transition: background-color 0.2s;
+            color: #fff;
+            transition: all 0.2s;
         }
 
             .btn-primary:hover {
                 background-color: var(--btn-primary-hover);
             }
 
-        .form-check-label {
-            font-size: 0.9rem;
-        }
-
-        .alt-link {
-            font-size: 0.9rem;
-            color: var(--btn-primary);
-        }
-
-            .alt-link:hover {
-                text-decoration: underline;
-            }
-
         .text-muted {
             color: var(--text-muted) !important;
+        }
+
+        /* Верхняя панель для переключения темы и языка */
+        .top-controls {
+            position: absolute;
+            top: -3rem;
+            right: 0;
+            display: flex;
+            gap: 0.5rem;
+        }
+
+        .theme-toggle-btn{
+            background: none;
+            border: 1px solid var(--border-color);
+            color: var(--text-color);
+            padding: 0.25rem 0.5rem;
+            border-radius: 0.5rem;
+            cursor: pointer;
+            font-size: 0.9rem;
+            transition: background 0.2s, color 0.2s, border-color 0.2s;
+        }
+
+            .theme-toggle-btn:hover{
+                background-color: var(--btn-primary);
+                color: #fff;
+                border-color: var(--btn-primary);
+            }
+
+        #langToggle {
+            background: none;
+            border: 1px solid var(--border-color);
+            color: var(--text-color);
+            padding: 0.25rem 0.75rem;
+            border-radius: 0.5rem;
+            cursor: pointer;
+            font-size: 0.9rem;
+            transition: background 0.2s, color 0.2s, border-color 0.2s;
+            overflow: hidden;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+            #langToggle:hover {
+                background-color: var(--btn-primary);
+                color: #fff;
+                border-color: var(--btn-primary);
+            }
+
+        #langText {
+            display: inline-block;
+            transition: opacity 0.2s;
         }
     </style>
 </head>
 <body>
-    <div class="login-card">
-        <div class="text-center mb-4">
-            <div class="text-center mb-2 d-flex align-items-center justify-content-center gap-2">
-                <i class="bi bi-rocket-takeoff-fill" style="font-size: 1.75rem; color: var(--navbar-text);"></i>
-                <h3 class="brand-title mb-0" style="color: var(--navbar-text);">ServiceCRM</h3>
-            </div>
-            <p class="text-muted mb-0">Войдите в свой аккаунт</p>
+    <div class="login-wrapper">
+        <!-- Верхние кнопки -->
+        <div class="top-controls">
+            <!-- Кнопка смены языка -->
+            <button class="theme-toggle-btn" id="langToggle">
+                <span id="langText">RU</span>
+            </button>
+
+            <!-- Кнопка смены темы -->
+            <button class="theme-toggle-btn" id="themeToggle">
+                <i class="bi bi-sun-fill" id="themeIcon"></i>
+            </button>
         </div>
 
-        <form asp-action="Login" method="post">
-            <div asp-validation-summary="All" class="text-danger mb-3"></div>
-
-            <div class="mb-3">
-                <label asp-for="Username" class="form-label"></label>
-                <input asp-for="Username" class="form-control" placeholder="Введите логин" />
-                <span asp-validation-for="Username" class="text-danger"></span>
+        <div class="login-card">
+            <div class="text-center mb-2">
+                <div class="d-flex align-items-center justify-content-center gap-2 mb-2">
+                    <i class="bi bi-rocket-takeoff-fill" style="font-size: 1.75rem; color: var(--text-color);"></i>
+                    <h3 class="brand-title mb-0" style="color: var(--text-color);">ServiceCRM</h3>
+                </div>
+                <p class="text-muted mb-0">@Localizer["Subtitle"]</p>
             </div>
 
-            <div class="mb-3">
-                <label asp-for="Password" class="form-label"></label>
-                <input asp-for="Password" type="password" class="form-control" placeholder="Введите пароль" />
-                <span asp-validation-for="Password" class="text-danger"></span>
+            <div class="d-flex align-items-center justify-content-center gap-2 mb-2">
+                <span class="text-danger">
+                    @Html.ValidationMessage("LoginError")
+                </span>
             </div>
+           
+            <form asp-action="Login" method="post" autocomplete="off">
 
-            <div class="form-check mb-3">
-                <input asp-for="RememberMe" class="form-check-input" />
-                <label asp-for="RememberMe" class="form-check-label"></label>
-            </div>
+                <div class="mb-3">
+                    <div class="mb-1 d-flex justify-content-between align-items-center">
+                        <label asp-for="Username" class="form-label"></label>
+					    <span asp-validation-for="Username" class="text-danger"></span>
+                    </div>
+                    <input asp-for="Username" class="form-control" placeholder="@Localizer["LoginInputField"]" />
+                    
+                </div>
 
-            <div class="d-grid">
-                <button type="submit" class="btn btn-primary">Войти</button>
-            </div>
+                <div class="mb-3">
+                    <div class="mb-1 d-flex justify-content-between align-items-center">
+                        <label asp-for="Password" class="form-label"></label>
+					    <span asp-validation-for="Password" class="text-danger"></span>
+                    </div>
+                    <input asp-for="Password" type="password" class="form-control" placeholder="@Localizer["PasswordInputField"]" />
+                    
+                </div>
 
-            <div class="text-center mt-3">
-                <a asp-controller="Auth" asp-action="Register" class="alt-link">
-                    Нет аккаунта? Зарегистрироваться
-                </a>
-            </div>
-        </form>
+                <div class="form-check mb-3">
+                    <input asp-for="RememberMe" class="form-check-input" />
+                    <label asp-for="RememberMe" class="form-check-label"></label>
+                </div>
+
+                <div class="d-grid mb-3">
+                    <button type="submit" class="btn btn-primary">@Localizer["LoginButton"]</button>
+                </div>
+
+                <div class="text-center mt-3">
+                    <a asp-controller="Auth" asp-action="Register" class="alt-link">
+                        @Localizer["NoAccountButton"]
+                    </a>
+                </div>
+            </form>
+        </div>
     </div>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
     <partial name="_ValidationScriptsPartial" />
+
+    <script>
+        // Установка темы до рендера страницы
+        (function () {
+            const theme = localStorage.getItem("theme") || "light";
+            if (theme === "dark") document.body.classList.add("dark-mode");
+        })();
+
+        const body = document.body;
+        const toggleBtn = document.getElementById("themeToggle");
+        const themeIcon = document.getElementById("themeIcon");
+
+        if (localStorage.getItem("theme") === "dark") {
+            themeIcon.classList.replace("bi-sun-fill", "bi-moon-fill");
+        }
+
+        toggleBtn.addEventListener("click", () => {
+            body.classList.toggle("dark-mode");
+            const darkMode = body.classList.contains("dark-mode");
+            themeIcon.classList.toggle("bi-sun-fill", !darkMode);
+            themeIcon.classList.toggle("bi-moon-fill", darkMode);
+            localStorage.setItem("theme", darkMode ? "dark" : "light");
+        });
+
+        const langToggle = document.getElementById("langToggle");
+        const langText = document.getElementById("langText");
+
+        // Получаем текущий язык из куки или по умолчанию "ru"
+        function getCurrentLang() {
+            const match = document.cookie.match(new RegExp('(^| )' + '.AspNetCore.Culture' + '=([^;]+)'));
+            if (match) {
+                const val = match[2];
+                if (val.includes("en")) return "EN";
+            }
+            return "RU";
+        }
+
+        // Инициализация кнопки
+        let currentLang = getCurrentLang();
+        langText.textContent = currentLang === "RU" ? "EN" : "RU";
+
+        langToggle.addEventListener("click", () => {
+            const newLang = currentLang === "RU" ? "EN" : "RU";
+            currentLang = newLang;
+
+            // Анимация смены текста
+            langText.style.opacity = 0;
+            setTimeout(() => {
+                langText.textContent = (newLang == "RU" ? "EN" : "RU");
+                langText.style.opacity = 1;
+            }, 200);
+
+            // Отправка запроса на смену языка через форму
+            const form = document.createElement("form");
+            form.method = "get";
+            form.action = "/Language/Set";
+
+            const cultureInput = document.createElement("input");
+            cultureInput.type = "hidden";
+            cultureInput.name = "culture";
+            cultureInput.value = newLang.toLowerCase();
+            form.appendChild(cultureInput);
+
+            const returnUrlInput = document.createElement("input");
+            returnUrlInput.type = "hidden";
+            returnUrlInput.name = "returnUrl";
+            returnUrlInput.value = window.location.pathname;
+            form.appendChild(returnUrlInput);
+
+            document.body.appendChild(form);
+            form.submit();
+        });
+    </script>
 </body>
 </html>

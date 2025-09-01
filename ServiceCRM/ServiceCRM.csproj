@@ -16,7 +16,6 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Models\Settings\" />
     <Folder Include="Views\Auth\" />
   </ItemGroup>
 

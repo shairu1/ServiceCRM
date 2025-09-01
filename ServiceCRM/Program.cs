@@ -2,7 +2,9 @@ using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Localization;
 using Microsoft.EntityFrameworkCore;
 using ServiceCRM.Data;
+using ServiceCRM.Services;
 using ServiceCRM.Services.Cookie;
+using ServiceCRM.Services.Identity;
 using ServiceCRM.Services.Logger;
 using ServiceCRM.Services.UserServiceCenterProvider;
 using System.Globalization;
@@ -24,6 +26,7 @@ builder.Services
         options.Password.RequireNonAlphanumeric = false;
         options.Password.RequireUppercase = false;
     })
+    .AddErrorDescriber<LocalizedIdentityErrorDescriber>()
     .AddEntityFrameworkStores<ServiceCrmContext>()
     .AddDefaultTokenProviders();
 
@@ -38,7 +41,10 @@ builder.Services.ConfigureApplicationCookie(options =>
 builder.Services.AddSingleton<IActionLogger, ActionLogger>();
 builder.Services.AddScoped<IUserServiceCenterProvider, UserServiceCenterProvider>();
 builder.Services.AddScoped<ICookieManager, CookieManager>();
-
+builder.Services.AddControllersWithViews(options =>
+{
+    options.ModelBinderProviders.Insert(0, new DecimalModelBinderProvider());
+});
 
 builder.Services.AddLocalization(options => options.ResourcesPath = "Resources");
 
@@ -54,6 +60,7 @@ builder.Services.Configure<RequestLocalizationOptions>(options =>
     options.DefaultRequestCulture = new RequestCulture("ru");
     options.SupportedCultures = supportedCultures;
     options.SupportedUICultures = supportedCultures;
+    options.RequestCultureProviders.Insert(0, new CookieRequestCultureProvider());
 });
 
 // MVC с локализацией DataAnnotations
@@ -72,12 +79,11 @@ if (!app.Environment.IsDevelopment())
     app.UseHsts();
 }
 
-
 app.UseHttpsRedirection();
 app.UseStaticFiles();
 
-app.UseRequestLocalization();
 app.UseRouting();
+app.UseRequestLocalization();
 
 app.UseAuthentication();
 app.UseAuthorization();

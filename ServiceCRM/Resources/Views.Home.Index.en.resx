@@ -117,19 +117,82 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="Username" xml:space="preserve">
-    <value>Username</value>
+  <data name="Label1" xml:space="preserve">
+    <value>Welcome to the order management system!</value>
   </data>
-  <data name="Password" xml:space="preserve">
-    <value>Password</value>
+  <data name="Substring1Card9" xml:space="preserve">
+    <value>The Council:</value>
   </data>
-  <data name="RememberMe" xml:space="preserve">
-    <value>Remember me</value>
+  <data name="Substring1Label2" xml:space="preserve">
+    <value>With</value>
   </data>
-  <data name="UsernameRequired" xml:space="preserve">
-    <value>Required to fill in</value>
+  <data name="Substring2Card9" xml:space="preserve">
+    <value>Start by creating your first service in the section</value>
   </data>
-  <data name="PasswordRequired" xml:space="preserve">
-    <value>Required to fill in</value>
+  <data name="Substring3Card9" xml:space="preserve">
+    <value>«Settings»</value>
+  </data>
+  <data name="LabelCard1" xml:space="preserve">
+    <value>Create and configure service centers</value>
+  </data>
+  <data name="LabelCard2" xml:space="preserve">
+    <value>Add users to the services and grant them appropriate access</value>
+  </data>
+  <data name="LabelCard3" xml:space="preserve">
+    <value>Add new orders via a convenient form with full information</value>
+  </data>
+  <data name="LabelCard4" xml:space="preserve">
+    <value>Change order information and track statuses in real time</value>
+  </data>
+  <data name="LabelCard5" xml:space="preserve">
+    <value>Quick search for orders by parameters and advanced filtering</value>
+  </data>
+  <data name="LabelCard6" xml:space="preserve">
+    <value>User registration, password change, and access control</value>
+  </data>
+  <data name="LabelCard7" xml:space="preserve">
+    <value>Track the statistics and performance indicators of the service center</value>
+  </data>
+  <data name="LabelCard8" xml:space="preserve">
+    <value>Complete logging of all actions in the system</value>
+  </data>
+  <data name="Subtitle" xml:space="preserve">
+    <value>ServiceCRM — CRM service center</value>
+  </data>
+  <data name="Title" xml:space="preserve">
+    <value>Main</value>
+  </data>
+  <data name="TitleCard1" xml:space="preserve">
+    <value>🏢 Service management</value>
+  </data>
+  <data name="TitleCard2" xml:space="preserve">
+    <value>👥 Joint work</value>
+  </data>
+  <data name="TitleCard3" xml:space="preserve">
+    <value>📝 Creating orders</value>
+  </data>
+  <data name="TitleCard4" xml:space="preserve">
+    <value>✏️ Order editing</value>
+  </data>
+  <data name="TitleCard5" xml:space="preserve">
+    <value>🔍 Search and filtering</value>
+  </data>
+  <data name="TitleCard6" xml:space="preserve">
+    <value>🔐 Accounts</value>
+  </data>
+  <data name="TitleCard7" xml:space="preserve">
+    <value>📊 Analytics</value>
+  </data>
+  <data name="TitleCard8" xml:space="preserve">
+    <value>📝 Logging</value>
+  </data>
+  <data name="Substring2Label2" xml:space="preserve">
+    <value>, you can easily manage orders, track analytics, and keep customer records.</value>
+  </data>
+  <data name="LabelAuthors1" xml:space="preserve">
+    <value>The authors:</value>
+  </data>
+  <data name="LabelAuthors2" xml:space="preserve">
+    <value>Shevchuk Artem, Mikhlin Andrey</value>
   </data>
 </root>

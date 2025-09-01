@@ -117,19 +117,70 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="Username" xml:space="preserve">
-    <value>Username</value>
+  <data name="ApplyButton" xml:space="preserve">
+    <value>Применить</value>
   </data>
-  <data name="Password" xml:space="preserve">
-    <value>Password</value>
+  <data name="ColumnDataTable" xml:space="preserve">
+    <value>Дата</value>
   </data>
-  <data name="RememberMe" xml:space="preserve">
-    <value>Remember me</value>
+  <data name="ColumnOrderNumberTable" xml:space="preserve">
+    <value>№ заказа</value>
   </data>
-  <data name="UsernameRequired" xml:space="preserve">
-    <value>Required to fill in</value>
+  <data name="CreateOrderButton" xml:space="preserve">
+    <value>+ Создать заказ</value>
   </data>
-  <data name="PasswordRequired" xml:space="preserve">
-    <value>Required to fill in</value>
+  <data name="SearchInput" xml:space="preserve">
+    <value>Поиск №, устройство, марка, модель, неисправность, контрагент</value>
+  </data>
+  <data name="SortSelectAmountDown" xml:space="preserve">
+    <value>Сумма ↓</value>
+  </data>
+  <data name="SortSelectAmountUp" xml:space="preserve">
+    <value>Сумма ↑</value>
+  </data>
+  <data name="SortSelectDataDown" xml:space="preserve">
+    <value>По дате ↓</value>
+  </data>
+  <data name="SortSelectDataUp" xml:space="preserve">
+    <value>По дате ↑</value>
+  </data>
+  <data name="SortSelectStatusDown" xml:space="preserve">
+    <value>Статус ↓</value>
+  </data>
+  <data name="SortSelectStatusUp" xml:space="preserve">
+    <value>Статус ↑</value>
+  </data>
+  <data name="StatusSelect" xml:space="preserve">
+    <value>Все статусы</value>
+  </data>
+  <data name="ColumnStatusTable" xml:space="preserve">
+    <value>Статус</value>
+  </data>
+  <data name="ColumnTypeTable" xml:space="preserve">
+    <value>Тип</value>
+  </data>
+  <data name="ColumnBrandTable" xml:space="preserve">
+    <value>Марка</value>
+  </data>
+  <data name="Subtitle" xml:space="preserve">
+    <value>Заказы</value>
+  </data>
+  <data name="Title" xml:space="preserve">
+    <value>Заказы</value>
+  </data>
+  <data name="ColumnModelTable" xml:space="preserve">
+    <value>Модель</value>
+  </data>
+  <data name="ColumnIssueTable" xml:space="preserve">
+    <value>Неисправность</value>
+  </data>
+  <data name="ColumnAmountTable" xml:space="preserve">
+    <value>Сумма</value>
+  </data>
+  <data name="ColumnCounterpartyTable" xml:space="preserve">
+    <value>Контрагент</value>
+  </data>
+  <data name="ColumnActionsTable" xml:space="preserve">
+    <value>Действия</value>
   </data>
 </root>

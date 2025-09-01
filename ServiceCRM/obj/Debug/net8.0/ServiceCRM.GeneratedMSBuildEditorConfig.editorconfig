@@ -28,12 +28,64 @@ build_property._RazorSourceGeneratorDebug =
 build_property.EffectiveAnalysisLevelStyle = 8.0
 build_property.EnableCodeStyleSeverity = 
 
+[C:/Users/shair/Desktop/CHSU/3 year/2с_С\#-программирование/ServiceCRM/ServiceCRM/Views/Auth/Login.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQXV0aFxMb2dpbi5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/shair/Desktop/CHSU/3 year/2с_С\#-программирование/ServiceCRM/ServiceCRM/Views/Auth/Register.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQXV0aFxSZWdpc3Rlci5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/shair/Desktop/CHSU/3 year/2с_С\#-программирование/ServiceCRM/ServiceCRM/Views/Home/Analytics.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxBbmFseXRpY3MuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
 [C:/Users/shair/Desktop/CHSU/3 year/2с_С\#-программирование/ServiceCRM/ServiceCRM/Views/Home/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
 [C:/Users/shair/Desktop/CHSU/3 year/2с_С\#-программирование/ServiceCRM/ServiceCRM/Views/Home/Privacy.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxQcml2YWN5LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/shair/Desktop/CHSU/3 year/2с_С\#-программирование/ServiceCRM/ServiceCRM/Views/Orders/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcT3JkZXJzXENyZWF0ZS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/shair/Desktop/CHSU/3 year/2с_С\#-программирование/ServiceCRM/ServiceCRM/Views/Orders/Edit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcT3JkZXJzXEVkaXQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/shair/Desktop/CHSU/3 year/2с_С\#-программирование/ServiceCRM/ServiceCRM/Views/Orders/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcT3JkZXJzXEluZGV4LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/shair/Desktop/CHSU/3 year/2с_С\#-программирование/ServiceCRM/ServiceCRM/Views/ServiceCenters/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2VydmljZUNlbnRlcnNcQ3JlYXRlLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/shair/Desktop/CHSU/3 year/2с_С\#-программирование/ServiceCRM/ServiceCRM/Views/ServiceCenters/Edit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2VydmljZUNlbnRlcnNcRWRpdC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/shair/Desktop/CHSU/3 year/2с_С\#-программирование/ServiceCRM/ServiceCRM/Views/ServiceCenters/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2VydmljZUNlbnRlcnNcSW5kZXguY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/shair/Desktop/CHSU/3 year/2с_С\#-программирование/ServiceCRM/ServiceCRM/Views/Settings/ChangePassword.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2V0dGluZ3NcQ2hhbmdlUGFzc3dvcmQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/shair/Desktop/CHSU/3 year/2с_С\#-программирование/ServiceCRM/ServiceCRM/Views/Settings/CreateService.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2V0dGluZ3NcQ3JlYXRlU2VydmljZS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/shair/Desktop/CHSU/3 year/2с_С\#-программирование/ServiceCRM/ServiceCRM/Views/Settings/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2V0dGluZ3NcSW5kZXguY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/shair/Desktop/CHSU/3 year/2с_С\#-программирование/ServiceCRM/ServiceCRM/Views/Shared/Components/UserServiceCenters/Default.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXENvbXBvbmVudHNcVXNlclNlcnZpY2VDZW50ZXJzXERlZmF1bHQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
 [C:/Users/shair/Desktop/CHSU/3 year/2с_С\#-программирование/ServiceCRM/ServiceCRM/Views/Shared/Error.cshtml]

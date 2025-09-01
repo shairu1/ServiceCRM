@@ -1,4 +1,6 @@
 ﻿@using ServiceCRM.Services.UserServiceCenterProvider
+@inject Microsoft.AspNetCore.Mvc.Localization.IViewLocalizer Localizer
+
 <!DOCTYPE html>
 <html lang="ru">
 <head>
@@ -134,12 +136,12 @@
                     }
 
                     <ul class="navbar-nav me-auto">
-                        @if (User.Identity?.IsAuthenticated == true && services.Any())
+                        @if (User.Identity?.IsAuthenticated == true)
                         {
-                            <li class="nav-item"><a class="nav-link" asp-controller="Orders" asp-action="Index">Заказы</a></li>
-                            <li class="nav-item"><a class="nav-link" asp-controller="Home" asp-action="Analytics">Аналитика</a></li>
-                            <li class="nav-item"><a class="nav-link" asp-controller="Services" asp-action="Index">Сервисы</a></li>
-                            <li class="nav-item"><a class="nav-link" asp-controller="Settings" asp-action="Index">Настройки</a></li>
+                            <li class="nav-item"><a class="nav-link" asp-controller="Orders" asp-action="Index">@Localizer["OrdersButton"]</a></li>
+                            <li class="nav-item"><a class="nav-link" asp-controller="Analytics" asp-action="Index">@Localizer["AnalyticsButton"]</a></li>
+                            <li class="nav-item"><a class="nav-link" asp-controller="ServiceCenters" asp-action="Index">@Localizer["ServiceCentersButton"]</a></li>
+                            <li class="nav-item"><a class="nav-link" asp-controller="Settings" asp-action="Index">@Localizer["SettingsButton"]</a></li>
                         }
                     </ul>
 
@@ -147,18 +149,18 @@
                         @if (User.Identity?.IsAuthenticated == true && services.Any())
                         {
                             <li class="nav-item d-flex flex-column align-items-start me-3">
-                                <span class="service-label">Сервис</span>
-                                @await Component.InvokeAsync("UserServices", new { selectedServiceId = selectedServiceId })
+                                <span class="service-label">@Localizer["ServiceCenterLabel"]</span>
+                                @await Component.InvokeAsync("UserServiceCenters", new { selectedServiceId = selectedServiceId })
                             </li>
                         }
-                        else
+                        else if (User.Identity?.IsAuthenticated == false)
                         {
-                            <li class="nav-item"><a class="nav-link" asp-controller="Auth" asp-action="Login">Вход</a></li>
-                            <li class="nav-item"><a class="nav-link" asp-controller="Auth" asp-action="Register">Регистрация</a></li>
+                            <li class="nav-item"><a class="nav-link" asp-controller="Auth" asp-action="Login">@Localizer["LoginButton"]</a></li>
+                            <li class="nav-item"><a class="nav-link" asp-controller="Auth" asp-action="Register">@Localizer["RegisterButton"]</a></li>
                         }
 
                         <!-- Переключение темы -->
-                        <li class="nav-item">
+                        <li class="nav-item ms-3">
                             <button class="theme-toggle-btn" id="themeToggle">
                                 <i class="bi bi-sun-fill" id="themeIcon"></i>
                             </button>

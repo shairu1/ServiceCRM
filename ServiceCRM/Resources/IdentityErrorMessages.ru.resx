@@ -117,19 +117,16 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="Username" xml:space="preserve">
-    <value>Username</value>
+  <data name="DuplicateUserName" xml:space="preserve">
+    <value>Пользователь с именем «{0}» уже существует.</value>
   </data>
-  <data name="Password" xml:space="preserve">
-    <value>Password</value>
+  <data name="PasswordRequiresDigit" xml:space="preserve">
+    <value>Пароль должен содержать хотя бы одну цифру ('0'-'9').</value>
   </data>
-  <data name="RememberMe" xml:space="preserve">
-    <value>Remember me</value>
+  <data name="PasswordRequiresLower" xml:space="preserve">
+    <value>Пароль должен содержать хотя бы одну строчную букву ('a'-'z').</value>
   </data>
-  <data name="UsernameRequired" xml:space="preserve">
-    <value>Required to fill in</value>
-  </data>
-  <data name="PasswordRequired" xml:space="preserve">
-    <value>Required to fill in</value>
+  <data name="PasswordTooShort" xml:space="preserve">
+    <value>Пароль должен содержать минимум {0} символов.</value>
   </data>
 </root>

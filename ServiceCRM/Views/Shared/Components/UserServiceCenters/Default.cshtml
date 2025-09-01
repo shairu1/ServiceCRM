@@ -1,16 +1,16 @@
-﻿@model UserServicesViewModel
+﻿@model UserServiceCentersViewModel
 
-@if (Model.Services.Any())
+@if (Model.ServiceCenters.Any())
 {
     <li class="nav-item dropdown">
         <a class="nav-link dropdown-toggle service-dropdown" href="#" id="servicesDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-            @Model.SelectedService?.Name
+            @Model.SelectedServiceCenter?.Name
         </a>
         <ul class="dropdown-menu service-dropdown-menu" aria-labelledby="servicesDropdown">
-            @foreach (var service in Model.Services)
+            @foreach (var service in Model.ServiceCenters)
             {
                 <li>
-                    <a class="dropdown-item" asp-controller="Services" asp-action="Select" asp-route-id="@service.Id">
+                    <a class="dropdown-item" asp-controller="ServiceCenters" asp-action="Select" asp-route-id="@service.Id">
                         @service.Name
                     </a>
                 </li>

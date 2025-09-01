@@ -117,19 +117,25 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="Username" xml:space="preserve">
-    <value>Username</value>
+  <data name="OrdersButton" xml:space="preserve">
+    <value>Заказы</value>
   </data>
-  <data name="Password" xml:space="preserve">
-    <value>Password</value>
+  <data name="AnalyticsButton" xml:space="preserve">
+    <value>Аналитика</value>
   </data>
-  <data name="RememberMe" xml:space="preserve">
-    <value>Remember me</value>
+  <data name="ServiceCentersButton" xml:space="preserve">
+    <value>Сервисы</value>
   </data>
-  <data name="UsernameRequired" xml:space="preserve">
-    <value>Required to fill in</value>
+  <data name="SettingsButton" xml:space="preserve">
+    <value>Настройки</value>
   </data>
-  <data name="PasswordRequired" xml:space="preserve">
-    <value>Required to fill in</value>
+  <data name="ServiceCenterLabel" xml:space="preserve">
+    <value>Сервис</value>
+  </data>
+  <data name="LoginButton" xml:space="preserve">
+    <value>Вход</value>
+  </data>
+  <data name="RegisterButton" xml:space="preserve">
+    <value>Регистрация</value>
   </data>
 </root>

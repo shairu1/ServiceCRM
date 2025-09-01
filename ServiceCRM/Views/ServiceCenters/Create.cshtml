@@ -1,8 +1,6 @@
-﻿@model ChangePasswordViewModel
-@inject Microsoft.AspNetCore.Mvc.Localization.IViewLocalizer Localizer
-
+﻿@model CreateServiceViewModel
 @{
-    ViewData["Title"] = @Localizer["Title"];
+    ViewData["Title"] = "Создать новый сервис";
 }
 
 <style>
@@ -11,8 +9,8 @@
         --text-color: #1f2328;
         --text-muted: #656d76;
         --border-color: #d0d7de;
-        --btn-primary: #3b82f6;
-        --btn-primary-hover: #2563eb;
+        --btn-success: #22c55e;
+        --btn-success-hover: #16a34a;
         --navbar-text: #24292f;
     }
 
@@ -21,8 +19,8 @@
         --text-color: #c9d1d9;
         --text-muted: #8b949e;
         --border-color: #30363d;
-        --btn-primary: #3b82f6;
-        --btn-primary-hover: #2563eb;
+        --btn-success: #3fb950;
+        --btn-success-hover: #238636;
         --navbar-text: #ffffff;
     }
 
@@ -55,29 +53,29 @@
     body.dark-mode .form-control:focus {
         background-color: #161b22;
         color: #c9d1d9;
-        border-color: var(--btn-primary);
-        box-shadow: 0 0 0 0.2rem rgba(59,130,246,0.25);
+        border-color: var(--btn-success);
+        box-shadow: 0 0 0 0.2rem rgba(59,184,80,0.25);
     }
 
     body:not(.dark-mode) .form-control:focus {
         background-color: #ffffff;
         color: var(--text-color);
-        border-color: var(--btn-primary);
-        box-shadow: 0 0 0 0.2rem rgba(59,130,246,0.25);
+        border-color: var(--btn-success);
+        box-shadow: 0 0 0 0.2rem rgba(34,197,94,0.25);
     }
 
-    .btn-primary {
+    .btn-success {
         border-radius: 0.75rem;
         padding: 0.65rem;
         font-weight: 600;
-        background-color: var(--btn-primary);
+        background-color: var(--btn-success);
         border: none;
         color: #fff;
         transition: all 0.2s;
     }
 
-        .btn-primary:hover {
-            background-color: var(--btn-primary-hover);
+        .btn-success:hover {
+            background-color: var(--btn-success-hover);
         }
 
     .text-muted {
@@ -86,10 +84,10 @@
 </style>
 
 <div class="container mt-5 d-flex justify-content-center">
-    <div class="col-md-4">
+    <div class="col-md-5">
 
         <div class="text-center">
-            <h3>@Localizer["Subtitle"]</h3>
+            <h3>Создать новый сервис</h3>
         </div>
 
         @if (TempData["Message"] != null)
@@ -97,32 +95,19 @@
             <div class="alert alert-success">@TempData["Message"]</div>
         }
 
-        <form asp-action="ChangePassword" method="post" class="needs-validation" novalidate id="changePasswordForm">
+        <form asp-action="Create" method="post" class="needs-validation" novalidate id="createServiceForm">
 
             <div class="mb-3">
-                <label asp-for="CurrentPassword" class="form-label">@Localizer["CurrentPasswordLabel"]</label>
-                <input asp-for="CurrentPassword" class="form-control" type="password" />
-                <span asp-validation-for="CurrentPassword" class="text-danger"></span>
-            </div>
-
-            <div class="mb-3">
-                <label asp-for="NewPassword" class="form-label">@Localizer["NewPasswordLabel"]</label>
-                <input asp-for="NewPassword" class="form-control" type="password" />
-                <span asp-validation-for="NewPassword" class="text-danger"></span>
-            </div>
-
-            <div class="mb-3">
-                <label asp-for="ConfirmPassword" class="form-label">@Localizer["ConfirmPasswordLabel"]</label>
-                <input asp-for="ConfirmPassword" class="form-control" type="password" />
-                <span asp-validation-for="ConfirmPassword" class="text-danger"></span>
+                <label asp-for="Name" class="form-label">Название сервиса</label>
+                <input asp-for="Name" class="form-control" />
             </div>
 
             <div class="d-grid mb-3">
-                <button type="submit" class="btn btn-primary">@Localizer["SubmitButton"]</button>
+                <button type="submit" class="btn btn-success">Создать сервис</button>
             </div>
 
-            <div class="mt-3 text-center">
-                <a asp-action="Index" class="text-decoration-none text-muted">@Localizer["BackButton"]</a>
+            <div class="text-center">
+                <a asp-action="Index" class="text-decoration-none text-muted">← Вернуться в настройки</a>
             </div>
 
         </form>
