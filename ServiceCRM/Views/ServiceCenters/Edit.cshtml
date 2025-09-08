@@ -1,6 +1,72 @@
 ﻿@model EditServiceCenterViewModel
+@inject Microsoft.AspNetCore.Mvc.Localization.IViewLocalizer Localizer
+
 @{
-    ViewData["Title"] = "Редактировать сервис";
+    ViewData["Title"] = @Localizer["Title"];
+}
+
+@section Scripts {
+    <partial name="_ValidationScriptsPartial" />
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const form = document.getElementById('editServiceForm');
+            const saveButtonContainer = document.getElementById('saveButtonContainer');
+            const nameInput = document.getElementById('Name');
+            const initialName = nameInput.value;
+
+            function checkChanges() {
+                if (nameInput.value !== initialName) {
+                    saveButtonContainer.classList.add('show');
+                } else {
+                    saveButtonContainer.classList.remove('show');
+                }
+            }
+
+            nameInput.addEventListener('input', checkChanges);
+
+            form.addEventListener('submit', function() {
+                saveButtonContainer.classList.remove('show');
+            });
+
+            // Валидация формы добавления пользователя
+            document.querySelector('form[action*="AddMember"]').addEventListener('submit', function(e) {
+                const usernameInput = this.querySelector('input[name="username"]');
+                if (!usernameInput.value.trim()) {
+                    e.preventDefault();
+                    usernameInput.focus();
+                }
+            });
+
+            // Плавное исчезновение alert сообщений
+            const alerts = document.querySelectorAll('.alert');
+            alerts.forEach(alert => {
+                // Автоматическое скрытие через 5 секунд
+                setTimeout(() => {
+                    fadeOut(alert);
+                }, 5000);
+
+                // Скрытие при клике на кнопку закрытия
+                const closeButton = alert.querySelector('.btn-close');
+                if (closeButton) {
+                    closeButton.addEventListener('click', () => {
+                        fadeOut(alert);
+                    });
+                }
+            });
+
+            function fadeOut(element) {
+                element.style.transition = 'opacity 0.5s ease-out';
+                element.style.opacity = '0';
+
+                setTimeout(() => {
+                    if (element.parentNode) {
+                        element.parentNode.removeChild(element);
+                    }
+                }, 500);
+            }
+        });
+    </script>
 }
 
 <style>
@@ -9,9 +75,15 @@
         --text-color: #1f2328;
         --text-muted: #656d76;
         --border-color: #d0d7de;
+        --btn-primary: #3b82f6;
+        --btn-primary-hover: #2563eb;
         --btn-success: #22c55e;
         --btn-success-hover: #16a34a;
+        --btn-danger: #ef4444;
+        --btn-danger-hover: #dc2626;
         --navbar-text: #24292f;
+        --table-hover-bg: rgba(59,130,246,0.1);
+        --table-tr-border-color: #d0d7de;
     }
 
     body.dark-mode {
@@ -19,9 +91,15 @@
         --text-color: #c9d1d9;
         --text-muted: #8b949e;
         --border-color: #30363d;
+        --btn-primary: #3b82f6;
+        --btn-primary-hover: #1d4ed8;
         --btn-success: #3fb950;
         --btn-success-hover: #238636;
+        --btn-danger: #f85149;
+        --btn-danger-hover: #cf222e;
         --navbar-text: #ffffff;
+        --table-hover-bg: rgba(59,130,246,0.2);
+        --table-tr-border-color: #30363d;
     }
 
     body {
@@ -32,18 +110,17 @@
         transition: background-color 0.3s, color 0.3s;
     }
 
-    .text-center h3 {
-        color: var(--navbar-text);
-        font-weight: 700;
-        font-size: 1.5rem;
-        margin-bottom: 2rem;
+    .container-custom {
+        max-width: 600px;
+        margin: 0 auto;
+        padding: 0 15px;
     }
 
     .form-control {
         border-radius: 0.75rem;
         padding: 0.65rem 1rem;
-        width: 100%;
         max-width: 100%;
+        width: 100%;
         background-color: var(--bg-color);
         border: 1px solid var(--border-color);
         color: var(--text-color);
@@ -53,15 +130,15 @@
     body.dark-mode .form-control:focus {
         background-color: #161b22;
         color: #c9d1d9;
-        border-color: var(--btn-success);
-        box-shadow: 0 0 0 0.2rem rgba(59,184,80,0.25);
+        border-color: var(--btn-primary);
+        box-shadow: 0 0 0 0.2rem rgba(59,130,246,0.25);
     }
 
     body:not(.dark-mode) .form-control:focus {
         background-color: #ffffff;
         color: var(--text-color);
-        border-color: var(--btn-success);
-        box-shadow: 0 0 0 0.2rem rgba(34,197,94,0.25);
+        border-color: var(--btn-primary);
+        box-shadow: 0 0 0 0.2rem rgba(59,130,246,0.25);
     }
 
     .btn-success {
@@ -78,44 +155,277 @@
             background-color: var(--btn-success-hover);
         }
 
+    .btn-outline-danger {
+        border-radius: 0.65rem;
+        padding: 0.45rem 0.9rem;
+        font-weight: 500;
+        color: var(--btn-danger);
+        border-color: var(--btn-danger);
+        transition: all 0.2s;
+    }
+
+        .btn-outline-danger:hover {
+            background-color: var(--btn-danger);
+            color: #fff;
+        }
+
+    .btn-outline-success {
+        border-radius: 0.65rem;
+        padding: 0.45rem 0.9rem;
+        font-weight: 500;
+        color: var(--btn-success);
+        border-color: var(--btn-success);
+        transition: all 0.2s;
+    }
+
+        .btn-outline-success:hover {
+            background-color: var(--btn-success);
+            color: #fff;
+        }
+
+    .btn-outline-secondary {
+        border-radius: 0.65rem;
+        padding: 0.45rem 0.9rem;
+        font-weight: 500;
+        color: var(--text-muted);
+        border-color: var(--border-color);
+        transition: all 0.2s;
+    }
+
+        .btn-outline-secondary:hover {
+            background-color: var(--border-color);
+            color: var(--text-color);
+        }
+
+    .table-responsive {
+        border: 1px solid var(--border-color);
+        background-color: var(--bg-color);
+        border-radius: 0.5rem;
+        transition: background-color 0.3s, border-color 0.3s;
+    }
+
+    .table {
+        margin-bottom: 0;
+        border-collapse: separate;
+        border-spacing: 0;
+    }
+
+        .table th, .table td {
+            vertical-align: middle;
+            font-size: 0.95rem;
+            font-weight: 400;
+            color: var(--text-color);
+            border-top: 1px solid var(--border-color);
+            padding: 0.75rem;
+            background-color: var(--bg-color);
+        }
+
+        .table thead th {
+            background-color: var(--border-color);
+            color: var(--text-muted);
+            border-bottom: none;
+            font-weight: 500;
+        }
+
+    .table-hover tbody tr:hover {
+        background-color: var(--table-hover-bg);
+    }
+
     .text-muted {
         color: var(--text-muted) !important;
     }
+
+    .section-title {
+        font-weight: 600;
+        font-size: 1.05rem;
+        text-align: center;
+        margin-bottom: 1.5rem;
+        margin-top: 2rem;
+    }
+
+    .form-section {
+        margin-bottom: 2rem;
+    }
+
+    #saveButtonContainer {
+        overflow: hidden;
+        max-height: 0;
+        opacity: 0;
+        transition: max-height 0.3s ease, opacity 0.3s ease;
+        margin-bottom: 0 !important;
+    }
+
+        #saveButtonContainer.show {
+            max-height: 100px;
+            opacity: 1;
+            margin-bottom: 1rem !important;
+        }
+
+    .shadow-sm {
+        box-shadow: 0 1px 3px rgba(0,0,0,0.1) !important;
+    }
+
+    .rounded-3 {
+        border-radius: 0.5rem !important;
+    }
+
+    .align-middle {
+        vertical-align: middle !important;
+    }
+
+    .alert {
+        transition: opacity 0.5s ease-out;
+        border-radius: 0.75rem;
+        border: 1px solid transparent;
+    }
+
+    .alert-success {
+        background-color: rgba(34, 197, 94, 0.1);
+        border-color: rgba(34, 197, 94, 0.2);
+        color: var(--btn-success);
+    }
+
+    .alert-danger {
+        background-color: rgba(239, 68, 68, 0.1);
+        border-color: rgba(239, 68, 68, 0.2);
+        color: var(--btn-danger);
+    }
+
+    .alert-dismissible .btn-close {
+        padding: 0.75rem;
+        background-size: 0.75em;
+    }
+
+    /* Темная тема для alert */
+    body.dark-mode .alert-success {
+        background-color: rgba(63, 185, 80, 0.15);
+        border-color: rgba(63, 185, 80, 0.3);
+        color: #3fb950;
+    }
+
+    body.dark-mode .alert-danger {
+        background-color: rgba(248, 81, 73, 0.15);
+        border-color: rgba(248, 81, 73, 0.3);
+        color: #f85149;
+    }
 </style>
 
-<div class="container mt-5 d-flex justify-content-center">
-    <div class="col-md-5">
+<div class="container-custom mt-4 mb-5">
+    <div class="d-flex justify-content-between align-items-center mb-4">
+        <h2 class="mb-0">@Localizer["Subtitle"]</h2>
+        <a class="text-decoration-none text-muted" asp-action="Index">@Localizer["BackButton"]</a>
+    </div>
 
-        <div class="text-center">
-            <h3>Редактировать сервис</h3>
-        </div>
+    <form asp-action="Edit" method="post" class="needs-validation mb-4" novalidate id="editServiceForm">
+        <input type="hidden" asp-for="Id" />
 
-        <form asp-action="Edit" method="post" class="needs-validation" novalidate id="editServiceForm">
-            <input type="hidden" asp-for="Id" />
+        <div class="form-section">
+            <h4 class="section-title">@Localizer["ServiceCenterNameLabel"]</h4>
 
             <div class="mb-3">
-                <label asp-for="Name" class="form-label">Название сервиса</label>
-                <input asp-for="Name" class="form-control" />
+                <input asp-for="Name" class="form-control form-control-sm" id="Name" required />
                 <span asp-validation-for="Name" class="text-danger"></span>
             </div>
 
-            <div class="mb-3">
-                <label asp-for="NewMemberLogin" class="form-label">Добавить участника (логин)</label>
-                <input asp-for="NewMemberLogin" class="form-control" placeholder="Введите логин пользователя" />
-                <span asp-validation-for="NewMemberLogin" class="text-danger"></span>
+            <div class="d-grid mb-3" id="saveButtonContainer">
+                <button type="submit" class="btn btn-success">@Localizer["SaveChangesButton"]</button>
             </div>
+        </div>
+    </form>
 
-            <div class="d-grid mb-3">
-                <button type="submit" class="btn btn-success">Сохранить изменения</button>
-            </div>
+    <div class="form-section">
+        <h3 class="section-title">@Localizer["UsersServiceCenterLabel"]</h3>
 
-            <div class="text-center">
-                <a asp-action="Index" class="text-decoration-none text-muted">← Вернуться к списку сервисов</a>
+        <!-- Сообщения -->
+        @if (TempData["SuccessMessage"] != null)
+        {
+            <div class="alert alert-success alert-dismissible fade show" role="alert">
+                @TempData["SuccessMessage"]
+                <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
             </div>
-        </form>
+        }
+        @if (TempData["ErrorMessage"] != null)
+        {
+            <div class="alert alert-danger alert-dismissible fade show" role="alert">
+                @TempData["ErrorMessage"]
+                <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+            </div>
+        }
+
+        <div class="table-responsive shadow-sm rounded-3">
+            <table class="table table-hover align-middle">
+                <thead>
+                    <tr>
+                        <th>@Localizer["Login"]</th>
+                        <th>@Localizer["Email"]</th>
+                        <th class="text-end">@Localizer["Actions"]</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @if (Model.Members != null && Model.Members.Any())
+                    {
+                        // Фильтруем участников, исключая администратора
+                        var regularMembers = Model.Members.Where(m => m.Id != Model.Admin?.Id);
+
+                        @if (regularMembers.Any())
+                        {
+                            @foreach (var member in regularMembers)
+                            {
+                                <tr style="border-color: var(--table-tr-border-color)">
+                                    <td>@member.UserName</td>
+                                    <td>@member.Email</td>
+                                    <td class="text-end">
+                                        <form asp-action="RemoveMember" method="post" class="d-inline">
+                                            <input type="hidden" name="serviceCenterId" value="@Model.Id" />
+                                            <input type="hidden" name="userId" value="@member.Id" />
+                                            <button type="submit" class="btn btn-sm btn-outline-danger"
+                                                    onclick="return confirm('Вы уверены, что хотите удалить этого пользователя?')">
+                                                @Localizer["Delete"]
+                                            </button>
+                                        </form>
+                                    </td>
+                                </tr>
+                            }
+                        }
+                        else
+                        {
+                            <tr style="border-color: var(--table-tr-border-color)">
+                                <td colspan="3" class="text-center text-muted py-3">
+                                    @Localizer["ClearTableText"]
+                                </td>
+                            </tr>
+                        }
+                    }
+                    else
+                    {
+                        <tr style="border-color: var(--table-tr-border-color)">
+                            <td colspan="3" class="text-center text-muted py-3">
+                                В этом сервисном центре пока нет пользователей
+                            </td>
+                        </tr>
+                    }
+
+
+                    <!-- Строка для добавления нового пользователя -->
+                    <tr style="border-color: var(--table-tr-border-color)">
+                        <form asp-action="AddMember" method="post">
+                            <input type="hidden" name="serviceCenterId" value="@Model.Id" />
+                        <td>
+                            <input type="text" class="form-control form-control-sm"
+                                   name="username" placeholder="@Localizer["UsernameInputPlaceholder"]" required />
+                        </td>
+                        <td>
+                            <span class="text-muted">—</span>
+                        </td>
+                        <td class="text-end">
+                            <button type="submit" class="btn btn-sm btn-outline-success">
+                                @Localizer["Add"]
+                            </button>
+                        </td>
+                        </form>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
     </div>
 </div>
-
-@section Scripts {
-    <partial name="_ValidationScriptsPartial" />
-}

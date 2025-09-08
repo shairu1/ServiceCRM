@@ -1,0 +1,27 @@
+﻿@model IEnumerable<ServiceCRM.Models.Order>
+@inject ServiceCRM.Services.LocalizationOrderStatusHelper LocalizationOrderStatusHelper
+
+@foreach (var o in Model)
+{
+    <tr style="border-color: var(--table-tr-border-color)">
+        <td>@o.OrderNumber</td>
+        <td>@o.CreatedAt.ToString("dd.MM.yyyy HH:mm")</td>
+        <td>@LocalizationOrderStatusHelper.GetOrderStatusTranslation(o.Status)</td>
+        <td>@o.DeviceType</td>
+        <td>@o.Brand</td>
+        <td>@o.Model</td>
+        <td>@o.Issue</td>
+        <td>@o.Counterparty</td>
+        <td class="text-end">@o.Amount.ToString("N2")</td>
+        <td class="text-end">
+            <a asp-action="Edit" asp-route-id="@o.Id" class="btn btn-outline-success action-btn me-1" title="Редактировать">
+                <i class="bi bi-pencil"></i>
+            </a>
+            <form method="post" asp-action="Delete" asp-route-id="@o.Id" class="d-inline" onsubmit="return confirm('Удалить заказ?');">
+                <button type="submit" class="btn btn-outline-danger action-btn" title="Удалить">
+                    <i class="bi bi-trash"></i>
+                </button>
+            </form>
+        </td>
+    </tr>
+}

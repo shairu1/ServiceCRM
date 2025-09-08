@@ -10,8 +10,8 @@ public enum OrderStatus
     [Display(Name = "Repair")]
     Repair = 1,
 
-    [Display(Name = "Alignment")]
-    Alignment = 2,
+    [Display(Name = "Agreement")]
+    Agreement = 2,
 
     [Display(Name = "WaitingForParts")]
     WaitingForParts = 3,

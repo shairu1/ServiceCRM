@@ -1,4 +1,5 @@
-﻿using System.ComponentModel.DataAnnotations;
+﻿using Microsoft.AspNetCore.Identity;
+using System.ComponentModel.DataAnnotations;
 
 namespace ServiceCRM.Models;
 
@@ -9,6 +10,6 @@ public class EditServiceCenterViewModel
     [Required(ErrorMessage = "Название сервиса обязательно")]
     public string Name { get; set; } = string.Empty;
 
-    // Логин нового участника (можно оставить пустым)
-    public string? NewMemberLogin { get; set; }
+    public List<IdentityUser> Members { get; set; } = new List<IdentityUser>();
+    public IdentityUser Admin { get; set; } = new IdentityUser();
 }

@@ -120,7 +120,7 @@
   <data name="ApplyButton" xml:space="preserve">
     <value>Применить</value>
   </data>
-  <data name="ColumnDataTable" xml:space="preserve">
+  <data name="ColumnDateTable" xml:space="preserve">
     <value>Дата</value>
   </data>
   <data name="ColumnOrderNumberTable" xml:space="preserve">

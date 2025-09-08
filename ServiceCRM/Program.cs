@@ -41,12 +41,14 @@ builder.Services.ConfigureApplicationCookie(options =>
 builder.Services.AddSingleton<IActionLogger, ActionLogger>();
 builder.Services.AddScoped<IUserServiceCenterProvider, UserServiceCenterProvider>();
 builder.Services.AddScoped<ICookieManager, CookieManager>();
+builder.Services.AddScoped<LocalizationOrderStatusHelper>();
 builder.Services.AddControllersWithViews(options =>
 {
     options.ModelBinderProviders.Insert(0, new DecimalModelBinderProvider());
 });
 
 builder.Services.AddLocalization(options => options.ResourcesPath = "Resources");
+builder.Services.AddScoped<TestDataGenerator>();
 
 // Поддерживаемые культуры
 var supportedCultures = new[]

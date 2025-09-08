@@ -1,5 +1,6 @@
 ﻿@model IEnumerable<ServiceCRM.Models.Order>
 @inject Microsoft.AspNetCore.Mvc.Localization.IViewLocalizer Localizer
+@inject ServiceCRM.Services.LocalizationOrderStatusHelper LocalizationOrderStatusHelper
 
 @using ServiceCRM.Models
 
@@ -21,35 +22,108 @@
                placeholder="@Localizer["SearchInput"]" />
     </div>
     <div class="col-md-3">
-        <select name="status" class="form-select">
-            <option value="">@Localizer["StatusSelect"]</option>
-            @foreach (var s in Enum.GetValues(typeof(OrderStatus)).Cast<OrderStatus>())
-            {
-                <option value="@s" selected="@(currentStatus == s.ToString() ? "selected" : null)">@s</option>
-            }
-        </select>
+        <div class="dropdown w-100">
+            <a class="nav-link dropdown-toggle service-dropdown w-100 text-start" 
+                href="#" 
+                id="statusDropdown" 
+                role="button" 
+                data-bs-toggle="dropdown" 
+                aria-expanded="false">
+                    @(string.IsNullOrEmpty(currentStatus)
+                                    ? Localizer["StatusSelect"]
+                                    : LocalizationOrderStatusHelper.GetOrderStatusTranslation(
+                                    Enum.Parse<OrderStatus>(currentStatus)))
+            </a>
+            <ul class="dropdown-menu order-dropdown-menu w-100" aria-labelledby="statusDropdown">
+                <li>
+                    <a class="dropdown-item" href="?status=&search=@currentSearch&sort=@currentSort">
+                        @Localizer["StatusSelect"]
+                    </a>
+                </li>
+                @foreach (var s in Enum.GetValues(typeof(OrderStatus)).Cast<OrderStatus>())
+                {
+                    <li>
+                        <a class="dropdown-item @(currentStatus == s.ToString() ? "active" : "")"
+                           href="?status=@s&search=@currentSearch&sort=@currentSort">
+                            @LocalizationOrderStatusHelper.GetOrderStatusTranslation(s)
+                        </a>
+                    </li>
+                }
+            </ul>
+        </div>
     </div>
     <div class="col-md-3">
-        <select name="sort" class="form-select">
-            <option value="" selected="@(string.IsNullOrEmpty(currentSort) ? "selected" : null)">@Localizer["SortSelectDataDown"]</option>
-            <option value="created_asc" selected="@(currentSort == "created_asc" ? "selected" : null)">@Localizer["SortSelectDataUp"]</option>
-            <option value="sum_desc" selected="@(currentSort == "sum_desc" ? "selected" : null)">@Localizer["SortSelectAmountDown"]</option>
-            <option value="sum_asc" selected="@(currentSort == "sum_asc" ? "selected" : null)">@Localizer["SortSelectAmountUp"]</option>
-            <option value="status_desc" selected="@(currentSort == "status_desc" ? "selected" : null)">@Localizer["SortSelectStatusDown"]</option>
-            <option value="status_asc" selected="@(currentSort == "status_asc" ? "selected" : null)">@Localizer["SortSelectStatusUp"]</option>
-        </select>
+        <div class="dropdown w-100">
+            <a class="nav-link dropdown-toggle service-dropdown w-100 text-start"
+               href="#"
+               id="sortDropdown"
+               role="button"
+               data-bs-toggle="dropdown"
+               aria-expanded="false">
+                @{
+                    var sortLabel = currentSort switch
+                    {
+                        "created_asc" => Localizer["SortSelectDataUp"],
+                        "sum_desc" => Localizer["SortSelectAmountDown"],
+                        "sum_asc" => Localizer["SortSelectAmountUp"],
+                        "status_desc" => Localizer["SortSelectStatusDown"],
+                        "status_asc" => Localizer["SortSelectStatusUp"],
+                        _ => Localizer["SortSelectDataDown"]
+                    };
+                }
+                @sortLabel
+            </a>
+            <ul class="dropdown-menu order-dropdown-menu w-100" aria-labelledby="sortDropdown">
+                <li>
+                    <a class="dropdown-item @(string.IsNullOrEmpty(currentSort) ? "active" : "")"
+                       href="?sort=&status=@currentStatus&search=@currentSearch">
+                        @Localizer["SortSelectDataDown"]
+                    </a>
+                </li>
+                <li>
+                    <a class="dropdown-item @(currentSort == "created_asc" ? "active" : "")"
+                       href="?sort=created_asc&status=@currentStatus&search=@currentSearch">
+                        @Localizer["SortSelectDataUp"]
+                    </a>
+                </li>
+                <li>
+                    <a class="dropdown-item @(currentSort == "sum_desc" ? "active" : "")"
+                       href="?sort=sum_desc&status=@currentStatus&search=@currentSearch">
+                        @Localizer["SortSelectAmountDown"]
+                    </a>
+                </li>
+                <li>
+                    <a class="dropdown-item @(currentSort == "sum_asc" ? "active" : "")"
+                       href="?sort=sum_asc&status=@currentStatus&search=@currentSearch">
+                        @Localizer["SortSelectAmountUp"]
+                    </a>
+                </li>
+                <li>
+                    <a class="dropdown-item @(currentSort == "status_desc" ? "active" : "")"
+                       href="?sort=status_desc&status=@currentStatus&search=@currentSearch">
+                        @Localizer["SortSelectStatusDown"]
+                    </a>
+                </li>
+                <li>
+                    <a class="dropdown-item @(currentSort == "status_asc" ? "active" : "")"
+                       href="?sort=status_asc&status=@currentStatus&search=@currentSearch">
+                        @Localizer["SortSelectStatusUp"]
+                    </a>
+                </li>
+            </ul>
+        </div>
     </div>
     <div class="col-md-2 d-grid">
         <button class="btn btn-outline-success btn-lg">@Localizer["ApplyButton"]</button>
     </div>
 </form>
 
-<div class="table-responsive shadow-sm rounded-3">
+<div class="table-responsive shadow-sm rounded-3 mb-5">
     <table class="table table-hover align-middle mb-0">
         <thead>
             <tr>
                 <th>@Localizer["ColumnOrderNumberTable"]</th>
-                <th>@Localizer["ColumnDataTable"]</th>
+                <th>@Localizer["ColumnDateTable"]</th>
                 <th>@Localizer["ColumnStatusTable"]</th>
                 <th>@Localizer["ColumnTypeTable"]</th>
                 <th>@Localizer["ColumnBrandTable"]</th>
@@ -60,31 +134,8 @@
                 <th class="text-end">@Localizer["ColumnActionsTable"]</th>
             </tr>
         </thead>
-        <tbody>
-            @foreach (var o in Model)
-            {
-                <tr style="border-color: var(--table-tr-border-color)">
-                    <td>@o.Id</td>
-                    <td>@o.CreatedAt.ToString("dd.MM.yyyy HH:mm")</td>
-                    <td>@o.Status</td>
-                    <td>@o.DeviceType</td>
-                    <td>@o.Brand</td>
-                    <td>@o.Model</td>
-                    <td>@o.Issue</td>
-                    <td>@o.Counterparty</td>
-                    <td class="text-end">@o.Amount.ToString("N2")</td>
-                    <td class="text-end">
-                        <a asp-action="Edit" asp-route-id="@o.Id" class="btn btn-outline-success action-btn me-1" title="Редактировать">
-                            <i class="bi bi-pencil"></i>
-                        </a>
-                        <form method="post" asp-action="Delete" asp-route-id="@o.Id" class="d-inline" onsubmit="return confirm('Удалить заказ?');">
-                            <button type="submit" class="btn btn-outline-danger action-btn" title="Удалить">
-                                <i class="bi bi-trash"></i>
-                            </button>
-                        </form>
-                    </td>
-                </tr>
-            }
+        <tbody id="ordersBody">
+            @await Html.PartialAsync("_OrdersRows", Model)
         </tbody>
     </table>
 </div>
@@ -252,4 +303,89 @@
     .action-btn i {
         font-size: 1rem; /* иконка под текст */
     }
+
+    .dropdown-toggle {
+        border-radius: 0.75rem;
+        padding: 0.65rem 1rem;
+        font-size: 0.95rem;
+        color: var(--text-color);
+        background-color: var(--bg-color);
+        border: 1px solid var(--border-color);
+        text-align: left;
+        transition: background-color 0.3s, color 0.3s, border-color 0.3s;
+    }
+
+        .dropdown-toggle:focus {
+            box-shadow: 0 0 0 0.2rem rgba(59, 130, 246, 0.25);
+            background-color: antiquewhite;
+            border-color: var(--btn-primary);
+        }
+
+    .dropdown-menu {
+        border-radius: 0.75rem;
+        min-width: 100%;
+        background-color: var(--bg-color);
+        border: 1px solid var(--border-color);
+    }
+
+    .dropdown-item {
+        color: var(--text-color);
+        transition: background-color 0.2s, color 0.2s;
+    }
+
+        .dropdown-item:hover,
+        .dropdown-item:focus {
+            background-color: var(--btn-primary);
+            color: #fff;
+        }
+
+    body.dark-mode .dropdown-toggle {
+        background-color: #161b22;
+        color: #c9d1d9;
+        border-color: #30363d;
+    }
+
+    body.dark-mode .dropdown-menu {
+        background-color: #161b22;
+        border-color: #30363d;
+    }
+
+    body.dark-mode .dropdown-item {
+        color: #c9d1d9;
+    }
+
+        body.dark-mode .dropdown-item:hover,
+        body.dark-mode .dropdown-item:focus {
+            background-color: var(--btn-primary);
+            color: #fff;
+        }
 </style>
+
+<script>
+    let page = 1;
+    let loading = false;
+    const totalCount = @ViewData["TotalCount"];
+    const pageSize = 20;
+
+    window.addEventListener('scroll', async () => {
+        if (loading) return;
+
+        if ((window.innerHeight + window.scrollY) >= document.body.offsetHeight - 200) {
+            const loadedRows = document.querySelectorAll('#ordersBody tr').length;
+            if (loadedRows >= totalCount) return;
+
+            loading = true;
+            page++;
+
+            const params = new URLSearchParams(window.location.search);
+            params.set("page", page);
+
+            const response = await fetch(`/Orders/LoadMore?${params.toString()}`);
+            const html = await response.text();
+
+            document.getElementById('ordersBody').insertAdjacentHTML('beforeend', html);
+
+            loading = false;
+        }
+    });
+</script>

@@ -129,4 +129,7 @@
   <data name="PasswordTooShort" xml:space="preserve">
     <value>Password must be at least {0} characters.</value>
   </data>
+  <data name="PasswordMismatch" xml:space="preserve">
+    <value>Incorrect password.</value>
+  </data>
 </root>

@@ -28,6 +28,10 @@ build_property._RazorSourceGeneratorDebug =
 build_property.EffectiveAnalysisLevelStyle = 8.0
 build_property.EnableCodeStyleSeverity = 
 
+[C:/Users/shair/Desktop/CHSU/3 year/2с_С\#-программирование/ServiceCRM/ServiceCRM/Views/Analytics/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQW5hbHl0aWNzXEluZGV4LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
 [C:/Users/shair/Desktop/CHSU/3 year/2с_С\#-программирование/ServiceCRM/ServiceCRM/Views/Auth/Login.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQXV0aFxMb2dpbi5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
@@ -60,6 +64,10 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcT3JkZXJzXEluZGV4LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
+[C:/Users/shair/Desktop/CHSU/3 year/2с_С\#-программирование/ServiceCRM/ServiceCRM/Views/Orders/_OrdersRows.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcT3JkZXJzXF9PcmRlcnNSb3dzLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
 [C:/Users/shair/Desktop/CHSU/3 year/2с_С\#-программирование/ServiceCRM/ServiceCRM/Views/ServiceCenters/Create.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2VydmljZUNlbnRlcnNcQ3JlYXRlLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
@@ -76,10 +84,6 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2V0dGluZ3NcQ2hhbmdlUGFzc3dvcmQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/shair/Desktop/CHSU/3 year/2с_С\#-программирование/ServiceCRM/ServiceCRM/Views/Settings/CreateService.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2V0dGluZ3NcQ3JlYXRlU2VydmljZS5jc2h0bWw=
-build_metadata.AdditionalFiles.CssScope = 
-
 [C:/Users/shair/Desktop/CHSU/3 year/2с_С\#-программирование/ServiceCRM/ServiceCRM/Views/Settings/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2V0dGluZ3NcSW5kZXguY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
@@ -94,6 +98,10 @@ build_metadata.AdditionalFiles.CssScope =
 
 [C:/Users/shair/Desktop/CHSU/3 year/2с_С\#-программирование/ServiceCRM/ServiceCRM/Views/Shared/_ValidationScriptsPartial.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9WYWxpZGF0aW9uU2NyaXB0c1BhcnRpYWwuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/shair/Desktop/CHSU/3 year/2с_С\#-программирование/ServiceCRM/ServiceCRM/Views/TestData/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVGVzdERhdGFcSW5kZXguY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
 [C:/Users/shair/Desktop/CHSU/3 year/2с_С\#-программирование/ServiceCRM/ServiceCRM/Views/_ViewImports.cshtml]

@@ -111,6 +111,88 @@
             color: var(--text-muted);
             transition: background-color 0.3s, color 0.3s;
         }
+
+        /* Сбрасываем стиль автозаполнения */
+        input:-webkit-autofill,
+        input:-webkit-autofill:hover,
+        input:-webkit-autofill:focus,
+        input:-webkit-autofill:active {
+            -webkit-box-shadow: 0 0 0px 1000px var(--bg-color) inset !important;
+            -webkit-text-fill-color: var(--text-color) !important;
+            transition: background-color 5000s ease-in-out 0s;
+        }
+
+        /* Стили для выпадающего меню на мобильных устройствах */
+        .navbar-toggler {
+            border: none;
+            padding: 0.25rem 0.5rem;
+        }
+
+        .navbar-toggler-icon {
+            background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='rgba%2833, 37, 41, 0.75%29' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
+        }
+
+        .dark-mode .navbar-toggler-icon {
+            background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='rgba%28255, 255, 255, 0.75%29' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
+        }
+
+        /* Адаптивные стили для элементов навигации */
+        .nav-item .service-label {
+            display: none;
+        }
+
+        .nav-item .dropdown {
+            margin-top: 0.5rem;
+        }
+
+        /* На мобильных устройствах */
+        .navbar-collapse {
+            background-color: var(--navbar-bg);
+            border-radius: 0.375rem;
+            margin-top: 0.5rem;
+            padding: 1rem;
+            border: 1px solid var(--border-color);
+        }
+
+        /* На десктопе */
+        .desktop-nav-items {
+            display: flex;
+            align-items: center;
+        }
+
+        /* Медиа-запросы для адаптивности */
+        @@media (max-width: 991.98px) {
+            .desktop-nav-items {
+                display: none !important;
+            }
+
+            .navbar-collapse .nav-item {
+                margin-bottom: 0.5rem;
+            }
+
+            .navbar-collapse .service-label {
+                display: block;
+                margin-bottom: 0.25rem;
+            }
+
+            .navbar-collapse .theme-toggle-btn {
+                margin-top: 1rem;
+                padding: 0.5rem 0;
+            }
+        }
+
+        @@media (min-width: 992px) {
+            .navbar-collapse {
+                background-color: transparent;
+                border: none;
+                margin-top: 0;
+                padding: 0;
+            }
+
+            .mobile-only {
+                display: none !important;
+            }
+        }
     </style>
 </head>
 <body>
@@ -121,7 +203,8 @@
                     <i class="bi bi-rocket-takeoff-fill me-1"></i> ServiceCRM
                 </a>
 
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNav">
+                <!-- Кнопка меню для мобильных устройств -->
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNav" aria-controls="mainNav" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                 </button>
 
@@ -135,7 +218,8 @@
                         int? selectedServiceId = cookie != null ? int.Parse(cookie) : null;
                     }
 
-                    <ul class="navbar-nav me-auto">
+                    <!-- Навигационные ссылки для десктопа -->
+                    <ul class="navbar-nav me-auto desktop-nav-items">
                         @if (User.Identity?.IsAuthenticated == true)
                         {
                             <li class="nav-item"><a class="nav-link" asp-controller="Orders" asp-action="Index">@Localizer["OrdersButton"]</a></li>
@@ -145,11 +229,14 @@
                         }
                     </ul>
 
-                    <ul class="navbar-nav ms-auto align-items-center">
+                    <!-- Правая часть навигации для десктопа -->
+                    <ul class="navbar-nav ms-auto align-items-center desktop-nav-items">
+                        <li class="me-3">
+                            <span class="service-label">@Localizer["ServiceCenterLabel"]</span>
+                        </li>
                         @if (User.Identity?.IsAuthenticated == true && services.Any())
                         {
                             <li class="nav-item d-flex flex-column align-items-start me-3">
-                                <span class="service-label">@Localizer["ServiceCenterLabel"]</span>
                                 @await Component.InvokeAsync("UserServiceCenters", new { selectedServiceId = selectedServiceId })
                             </li>
                         }
@@ -160,12 +247,43 @@
                         }
 
                         <!-- Переключение темы -->
-                        <li class="nav-item ms-3">
+                        <li class="nav-item">
                             <button class="theme-toggle-btn" id="themeToggle">
                                 <i class="bi bi-sun-fill" id="themeIcon"></i>
                             </button>
                         </li>
                     </ul>
+
+                    <!-- Мобильное меню (отображается только на мобильных) -->
+                    <div class="mobile-only">
+                        @if (User.Identity?.IsAuthenticated == true)
+                        {
+                            <div class="nav-item"><a class="nav-link d-block py-2" asp-controller="Orders" asp-action="Index">@Localizer["OrdersButton"]</a></div>
+                            <div class="nav-item"><a class="nav-link d-block py-2" asp-controller="Analytics" asp-action="Index">@Localizer["AnalyticsButton"]</a></div>
+                            <div class="nav-item"><a class="nav-link d-block py-2" asp-controller="ServiceCenters" asp-action="Index">@Localizer["ServiceCentersButton"]</a></div>
+                            <div class="nav-item"><a class="nav-link d-block py-2" asp-controller="Settings" asp-action="Index">@Localizer["SettingsButton"]</a></div>
+                        }
+
+                        @if (User.Identity?.IsAuthenticated == true && services.Any())
+                        {
+                            <div class="nav-item m-3">
+                                <span class="service-label">@Localizer["ServiceCenterLabel"]</span>
+                                @await Component.InvokeAsync("UserServiceCenters", new { selectedServiceId = selectedServiceId })
+                            </div>
+                        }
+                        else if (User.Identity?.IsAuthenticated == false)
+                        {
+                            <div class="nav-item"><a class="nav-link d-block py-2" asp-controller="Auth" asp-action="Login">@Localizer["LoginButton"]</a></div>
+                            <div class="nav-item"><a class="nav-link d-block py-2" asp-controller="Auth" asp-action="Register">@Localizer["RegisterButton"]</a></div>
+                        }
+
+                        <!-- Переключение темы в мобильном меню -->
+                        <div class="nav-item ms-3">
+                            <button class="theme-toggle-btn d-block w-100 text-start" id="themeToggleMobile" style="padding: 0.5rem 0;">
+                                <i class="bi bi-sun-fill me-2" id="themeIconMobile"></i>
+                            </button>
+                        </div>
+                    </div>
                 </div>
             </div>
         </nav>
@@ -191,18 +309,37 @@
         const body = document.body;
         const toggleBtn = document.getElementById("themeToggle");
         const themeIcon = document.getElementById("themeIcon");
+        const toggleBtnMobile = document.getElementById("themeToggleMobile");
+        const themeIconMobile = document.getElementById("themeIconMobile");
 
-        if (localStorage.getItem("theme") === "dark") {
-            body.classList.add("dark-mode");
-            themeIcon.classList.replace("bi-sun-fill", "bi-moon-fill");
+        // Функция для применения темы
+        function applyTheme(isDark) {
+            if (isDark) {
+                body.classList.add("dark-mode");
+                themeIcon.classList.replace("bi-sun-fill", "bi-moon-fill");
+                themeIconMobile.classList.replace("bi-sun-fill", "bi-moon-fill");
+            } else {
+                body.classList.remove("dark-mode");
+                themeIcon.classList.replace("bi-moon-fill", "bi-sun-fill");
+                themeIconMobile.classList.replace("bi-moon-fill", "bi-sun-fill");
+            }
+            localStorage.setItem("theme", isDark ? "dark" : "light");
         }
 
+        // Проверка текущей темы
+        if (localStorage.getItem("theme") === "dark") {
+            applyTheme(true);
+        }
+
+        // Обработчики для переключения темы
         toggleBtn.addEventListener("click", () => {
-            body.classList.toggle("dark-mode");
-            const darkMode = body.classList.contains("dark-mode");
-            themeIcon.classList.toggle("bi-sun-fill", !darkMode);
-            themeIcon.classList.toggle("bi-moon-fill", darkMode);
-            localStorage.setItem("theme", darkMode ? "dark" : "light");
+            const isDark = !body.classList.contains("dark-mode");
+            applyTheme(isDark);
+        });
+
+        toggleBtnMobile.addEventListener("click", () => {
+            const isDark = !body.classList.contains("dark-mode");
+            applyTheme(isDark);
         });
     </script>
 

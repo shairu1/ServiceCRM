@@ -120,8 +120,8 @@
   <data name="ApplyButton" xml:space="preserve">
     <value>Apply</value>
   </data>
-  <data name="ColumnDataTable" xml:space="preserve">
-    <value>Data</value>
+  <data name="ColumnDateTable" xml:space="preserve">
+    <value>Date</value>
   </data>
   <data name="ColumnOrderNumberTable" xml:space="preserve">
     <value>Order number</value>

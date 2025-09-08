@@ -1,0 +1,318 @@
+﻿@model ServiceCRM.Models.AnalyticsViewModel
+@using ServiceCRM.Models
+@inject Microsoft.AspNetCore.Mvc.Localization.IViewLocalizer Localizer
+@inject ServiceCRM.Services.LocalizationOrderStatusHelper LocalizationOrderStatusHelper
+
+@{
+    ViewData["Title"] = @Localizer["AnalyticsTitle"];
+}
+
+<div class="d-flex flex-column flex-md-row align-items-md-center justify-content-between mb-4">
+    <h2 class="mb-3 mb-md-0">@Localizer["AnalyticsSubtitle"]</h2>
+
+    <div class="dropdown">
+        <button class="btn btn-outline-primary dropdown-toggle" type="button" id="periodDropdown" data-bs-toggle="dropdown" aria-expanded="false">
+            @(Model.Period == "year" ? Localizer["YearPeriod"] : Localizer["MonthPeriod"])
+        </button>
+        <ul class="dropdown-menu" aria-labelledby="periodDropdown">
+            <li><a class="dropdown-item @(Model.Period == "month" ? "active" : "")" href="?period=month">@Localizer["MonthPeriod"]</a></li>
+            <li><a class="dropdown-item @(Model.Period == "year" ? "active" : "")" href="?period=year">@Localizer["YearPeriod"]</a></li>
+        </ul>
+    </div>
+</div>
+
+<!-- Статистические карточки -->
+<div class="row mb-4">
+    <div class="col-md-3 mb-3">
+        <div class="card h-100 shadow-sm">
+            <div class="card-body">
+                <h6 class="card-title text-muted">@Localizer["TotalOrders"]</h6>
+                <h4 class="card-text text-primary">@Model.TotalOrders</h4>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-3 mb-3">
+        <div class="card h-100 shadow-sm">
+            <div class="card-body">
+                <h6 class="card-title text-muted">@Localizer["TotalRevenue"]</h6>
+                <h4 class="card-text text-success">@Model.TotalRevenue.ToString("N2") ₽</h4>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-3 mb-3">
+        <div class="card h-100 shadow-sm">
+            <div class="card-body">
+                <h6 class="card-title text-muted">@Localizer["AverageOrderValue"]</h6>
+                <h4 class="card-text text-info">@Model.AverageOrderValue.ToString("N2") ₽</h4>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-3 mb-3">
+        <div class="card h-100 shadow-sm">
+            <div class="card-body">
+                <h6 class="card-title text-muted">@Localizer["ActiveOrders"]</h6>
+                <h4 class="card-text text-warning">@Model.ActiveOrders</h4>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Графики -->
+<div class="row mb-4">
+    <div class="col-md-6 mb-3">
+        <div class="card h-100 shadow-sm">
+            <div class="card-header">
+                <h6 class="card-title mb-0">@Localizer["RevenueChartTitle"]</h6>
+            </div>
+            <div class="card-body">
+                <canvas id="revenueChart" height="250"></canvas>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-6 mb-3">
+        <div class="card h-100 shadow-sm">
+            <div class="card-header">
+                <h6 class="card-title mb-0">@Localizer["OrdersByStatusChartTitle"]</h6>
+            </div>
+            <div class="card-body">
+                <canvas id="statusChart" height="250"></canvas>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="row mb-4">
+    <div class="col-md-6 mb-3">
+        <div class="card h-100 shadow-sm">
+            <div class="card-header">
+                <h6 class="card-title mb-0">@Localizer["OrdersByDeviceTypeTitle"]</h6>
+            </div>
+            <div class="card-body">
+                <canvas id="deviceTypeChart" height="250"></canvas>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-6 mb-3">
+        <div class="card h-100 shadow-sm">
+            <div class="card-header">
+                <h6 class="card-title mb-0">@Localizer["RevenueByDeviceTypeTitle"]</h6>
+            </div>
+            <div class="card-body">
+                <canvas id="revenueDeviceTypeChart" height="250"></canvas>
+            </div>
+        </div>
+    </div>
+</div>
+
+@section Scripts {
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script>
+        // График выручки по времени
+        const revenueCtx = document.getElementById('revenueChart').getContext('2d');
+        const revenueData = {
+            labels: [@Html.Raw(string.Join(", ", Model.RevenueByMonth.Keys.Select(k => $"'{k}'")))],
+            datasets: [{
+                label: '@Localizer["Revenue"]',
+                data: [@string.Join(", ", Model.RevenueByMonth.Values)],
+                backgroundColor: 'rgba(59, 130, 246, 0.2)',
+                borderColor: 'rgba(59, 130, 246, 1)',
+                borderWidth: 2,
+                tension: 0.3
+            }]
+        };
+        new Chart(revenueCtx, {
+            type: 'line',
+            data: revenueData,
+            options: {
+                responsive: true,
+                plugins: {
+                    legend: { display: false }
+                },
+                scales: {
+                    y: {
+                        beginAtZero: true,
+                        ticks: {
+                            callback: function(value) {
+                                return value + ' ₽';
+                            }
+                        }
+                    }
+                }
+            }
+        });
+
+        // График заказов по статусам
+        const statusCtx = document.getElementById('statusChart').getContext('2d');
+        const statusData = {
+            labels: [@Html.Raw(string.Join(", ", Model.OrdersByStatus.Keys.Select(k => $"'{LocalizationOrderStatusHelper.GetOrderStatusTranslation(Enum.Parse<OrderStatus>(k))}'")))],
+            datasets: [{
+                data: [@string.Join(", ", Model.OrdersByStatus.Values)],
+                backgroundColor: [
+                    'rgba(59, 130, 246, 0.8)',
+                    'rgba(34, 197, 94, 0.8)',
+                    'rgba(251, 191, 36, 0.8)',
+                    'rgba(239, 68, 68, 0.8)',
+                    'rgba(156, 163, 175, 0.8)'
+                ],
+                borderWidth: 1
+            }]
+        };
+        new Chart(statusCtx, {
+            type: 'doughnut',
+            data: statusData,
+            options: {
+                responsive: true,
+                plugins: {
+                    legend: {
+                        position: 'bottom'
+                    }
+                }
+            }
+        });
+
+        // График заказов по типам устройств
+        const deviceTypeCtx = document.getElementById('deviceTypeChart').getContext('2d');
+        const deviceTypeData = {
+            labels: [@Html.Raw(string.Join(", ", Model.OrdersByDeviceType.Keys.Select(k => $"'{k}'")))],
+            datasets: [{
+                label: '@Localizer["OrdersCount"]',
+                data: [@string.Join(", ", Model.OrdersByDeviceType.Values)],
+                backgroundColor: 'rgba(34, 197, 94, 0.2)',
+                borderColor: 'rgba(34, 197, 94, 1)',
+                borderWidth: 2
+            }]
+        };
+        new Chart(deviceTypeCtx, {
+            type: 'bar',
+            data: deviceTypeData,
+            options: {
+                responsive: true,
+                plugins: {
+                    legend: { display: false }
+                },
+                scales: {
+                    y: {
+                        beginAtZero: true
+                    }
+                }
+            }
+        });
+
+        // График выручки по типам устройств
+        const revenueDeviceCtx = document.getElementById('revenueDeviceTypeChart').getContext('2d');
+        const revenueDeviceData = {
+            labels: [@Html.Raw(string.Join(", ", Model.RevenueByDeviceType.Keys.Select(k => $"'{k}'")))],
+            datasets: [{
+                label: '@Localizer["Revenue"]',
+                data: [@string.Join(", ", Model.RevenueByDeviceType.Values)],
+                backgroundColor: 'rgba(251, 191, 36, 0.2)',
+                borderColor: 'rgba(251, 191, 36, 1)',
+                borderWidth: 2
+            }]
+        };
+        new Chart(revenueDeviceCtx, {
+            type: 'bar',
+            data: revenueDeviceData,
+            options: {
+                responsive: true,
+                plugins: {
+                    legend: { display: false }
+                },
+                scales: {
+                    y: {
+                        beginAtZero: true,
+                        ticks: {
+                            callback: function(value) {
+                                return value + ' ₽';
+                            }
+                        }
+                    }
+                }
+            }
+        });
+    </script>
+}
+
+<style>
+    :root {
+        --bg-color: #f6f8fa;
+        --text-color: #1f2328;
+        --text-muted: #656d76;
+        --border-color: #d0d7de;
+        --btn-primary: #3b82f6;
+        --btn-primary-hover: #2563eb;
+        --btn-success: #22c55e;
+        --btn-success-hover: #16a34a;
+        --btn-danger: #ef4444;
+        --btn-danger-hover: #dc2626;
+        --table-hover-bg: rgba(59,130,246,0.1);
+        --table-tr-border-color: #d0d7de;
+        --card-bg: #ffffff;
+    }
+
+    body.dark-mode {
+        --bg-color: #0d1117;
+        --text-color: #c9d1d9;
+        --text-muted: #8b949e;
+        --border-color: #30363d;
+        --btn-primary: #3b82f6;
+        --btn-primary-hover: #1d4ed8;
+        --btn-success: #3fb950;
+        --btn-success-hover: #238636;
+        --btn-danger: #f85149;
+        --btn-danger-hover: #cf222e;
+        --table-hover-bg: rgba(59,130,246,0.2);
+        --table-tr-border-color: #30363d;
+        --card-bg: #161b22;
+    }
+
+    body {
+        background-color: var(--bg-color);
+        color: var(--text-color);
+        font-family: 'Inter', sans-serif;
+        transition: background-color 0.3s, color 0.3s;
+    }
+
+    .card {
+        background-color: var(--card-bg);
+        border: 1px solid var(--border-color);
+        transition: background-color 0.3s, border-color 0.3s;
+    }
+
+    .card-header {
+        background-color: var(--border-color);
+        border-bottom: 1px solid var(--border-color);
+    }
+
+    .btn-outline-primary {
+        color: var(--btn-primary);
+        border-color: var(--btn-primary);
+        border-radius: 0.75rem;
+    }
+
+        .btn-outline-primary:hover {
+            background-color: var(--btn-primary);
+            color: #fff;
+        }
+
+    .dropdown-menu {
+        background-color: var(--card-bg);
+        border: 1px solid var(--border-color);
+        border-radius: 0.75rem;
+    }
+
+    .dropdown-item {
+        color: var(--text-color);
+    }
+
+        .dropdown-item:hover,
+        .dropdown-item:focus {
+            background-color: var(--btn-primary);
+            color: #fff;
+        }
+
+        .dropdown-item.active {
+            background-color: var(--btn-primary);
+            color: #fff;
+        }
+</style>

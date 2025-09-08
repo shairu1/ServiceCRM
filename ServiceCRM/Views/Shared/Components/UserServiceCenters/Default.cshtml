@@ -2,7 +2,7 @@
 
 @if (Model.ServiceCenters.Any())
 {
-    <li class="nav-item dropdown">
+    <div class="nav-item dropdown m-0">
         <a class="nav-link dropdown-toggle service-dropdown" href="#" id="servicesDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
             @Model.SelectedServiceCenter?.Name
         </a>
@@ -16,7 +16,7 @@
                 </li>
             }
         </ul>
-    </li>
+    </div>
 }
 
 
@@ -35,7 +35,7 @@
         background-color: var(--bg-color);
         border: 1px solid var(--border-color);
         border-radius: 0.5rem;
-        min-width: 200px;
+        min-width: 100%;
     }
 
         .service-dropdown-menu .dropdown-item {
@@ -64,5 +64,63 @@
                 background-color: var(--btn-primary);
                 color: #fff;
             }
+
+    .dropdown-toggle {
+        border-radius: 0.75rem;
+        padding: 0.65rem 1rem;
+        font-size: 0.95rem;
+        color: var(--text-color);
+        background-color: var(--bg-color);
+        border: 1px solid var(--border-color);
+        text-align: left;
+        transition: background-color 0.3s, color 0.3s, border-color 0.3s;
+    }
+
+        .dropdown-toggle:focus {
+            box-shadow: 0 0 0 0.2rem rgba(59, 130, 246, 0.25);
+            background-color: antiquewhite;
+            border-color: var(--btn-primary);
+        }
+
+    .dropdown-menu {
+        border-radius: 0.75rem;
+        min-width: 100%;
+        background-color: var(--bg-color);
+        border: 1px solid var(--border-color);
+    }
+
+    .dropdown-item {
+        color: var(--text-color);
+        transition: background-color 0.2s, color 0.2s;
+    }
+
+        .dropdown-item:hover,
+        .dropdown-item:focus {
+            background-color: var(--btn-primary);
+            color: #fff;
+        }
+
+    body.dark-mode .dropdown-toggle {
+        background-color: #161b22;
+        color: #c9d1d9;
+        border-color: #30363d;
+    }
+
+    body.dark-mode .dropdown-menu {
+        background-color: #161b22;
+        border-color: #30363d;
+    }
+
+    body.dark-mode .dropdown-item {
+        color: #c9d1d9;
+    }
+
+        body.dark-mode .dropdown-item:hover,
+        body.dark-mode .dropdown-item:focus {
+            background-color: var(--btn-primary);
+            color: #fff;
+        }
+
+
 
 </style>

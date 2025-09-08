@@ -239,10 +239,16 @@
             <h3>@Localizer["Subtitle"]</h3>
         </div>
 
-        @if (TempData["Message"] != null)
+        @if (TempData["SettingsMessage"] != null)
         {
-            <div class="alert alert-success">@TempData["Message"]</div>
+            <div class="alert alert-success">@TempData["SettingsMessage"]</div>
         }
+
+        <div class="d-flex align-items-center justify-content-center gap-2 mb-2">
+            <span class="text-danger">
+                @Html.ValidationMessage("SettingsError")
+            </span>
+        </div>
 
         <form asp-action="Index" method="post" class="needs-validation" novalidate id="settingsForm">
             <div class="mb-3">
@@ -292,7 +298,7 @@
             </div>
 
             <div class="d-grid mb-3" id="saveButtonContainer">
-                <button type="submit" class="btn btn-primary">@Localizer["SaveButton"]</button>
+                <button type="submit" class="btn btn-outline-primary flex-fill">@Localizer["SaveButton"]</button>
             </div>
 
             <div class="d-flex justify-content-between mb-3 gap-2">

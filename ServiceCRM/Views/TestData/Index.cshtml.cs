@@ -1,9 +1,9 @@
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 
-namespace ServiceCRM.Views.ServiceCenters
+namespace ServiceCRM.Views.TestData
 {
-    public class CreateModel : PageModel
+    public class IndexModel : PageModel
     {
         public void OnGet()
         {

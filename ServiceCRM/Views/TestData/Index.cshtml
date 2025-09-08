@@ -1,0 +1,107 @@
+﻿@inject Microsoft.AspNetCore.Mvc.Localization.IViewLocalizer Localizer
+
+@{
+    ViewData["Title"] = "Генератор тестовых данных";
+}
+
+<div class="container mt-4">
+    <div class="row">
+        <div class="col-md-8 mx-auto">
+            <div class="card shadow-sm">
+                <div class="card-header bg-primary text-white">
+                    <h4 class="mb-0">@ViewData["Title"]</h4>
+                </div>
+                <div class="card-body">
+                    @if (TempData["Message"] != null)
+                    {
+                        <div class="alert alert-@(TempData["MessageType"] ?? "info") alert-dismissible fade show" role="alert">
+                            @TempData["Message"]
+                            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                        </div>
+                    }
+
+                    <div class="alert alert-warning">
+                        <strong>Внимание!</strong> Эта функция предназначена только для тестирования.
+                        Не используйте в production среде.
+                    </div>
+
+                    <form method="post" asp-action="Generate" class="mb-4">
+                        @Html.AntiForgeryToken()
+
+                        <div class="mb-3">
+                            <label for="count" class="form-label">Количество заказов:</label>
+                            <input type="number" id="count" name="count" class="form-control"
+                                   value="100" min="1" max="1000" required>
+                            <div class="form-text">От 1 до 1000 заказов</div>
+                        </div>
+
+                        <div class="mb-3">
+                            <label for="serviceCenterId" class="form-label">ID сервисного центра:</label>
+                            <input type="number" id="serviceCenterId" name="serviceCenterId"
+                                   class="form-control" value="1" min="1" required>
+                        </div>
+
+                        <button type="submit" class="btn btn-success btn-lg w-100"
+                                onclick="return confirm('Создать тестовые данные?')">
+                            <i class="bi bi-database-add"></i> Сгенерировать данные
+                        </button>
+                    </form>
+
+                    <form method="post" asp-action="Clear">
+                        @Html.AntiForgeryToken()
+
+                        <button type="submit" class="btn btn-danger btn-lg w-100"
+                                onclick="return confirm('ВНИМАНИЕ! Это удалит ВСЕ заказы из базы данных. Продолжить?')">
+                            <i class="bi bi-database-dash"></i> Очистить все данные
+                        </button>
+                    </form>
+                </div>
+            </div>
+
+            <div class="card mt-4 shadow-sm">
+                <div class="card-header bg-info text-white">
+                    <h5 class="mb-0">Информация о генерируемых данных</h5>
+                </div>
+                <div class="card-body">
+                    <ul class="list-group list-group-flush">
+                        <li class="list-group-item">📅 Случайные даты за последние 6 месяцев</li>
+                        <li class="list-group-item">📱 Разные типы устройств: смартфоны, ноутбуки и т.д.</li>
+                        <li class="list-group-item">🏷️ Популярные бренды: Apple, Samsung, Xiaomi и другие</li>
+                        <li class="list-group-item">🔧 Различные проблемы: разбитые экраны, проблемы с батареей</li>
+                        <li class="list-group-item">👥 Разные контрагенты</li>
+                        <li class="list-group-item">💰 Случайные суммы от 500 до 20 000 рублей</li>
+                        <li class="list-group-item">📊 Все возможные статусы заказов</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<style>
+    .card {
+        border-radius: 0.75rem;
+        border: 1px solid var(--border-color);
+    }
+
+    .card-header {
+        border-radius: 0.75rem 0.75rem 0 0 !important;
+    }
+
+    .btn {
+        border-radius: 0.75rem;
+        padding: 0.75rem 1.5rem;
+        font-weight: 600;
+    }
+
+    .alert {
+        border-radius: 0.75rem;
+        border: none;
+    }
+
+    .list-group-item {
+        background-color: transparent;
+        border-color: var(--border-color);
+        color: var(--text-color);
+    }
+</style>

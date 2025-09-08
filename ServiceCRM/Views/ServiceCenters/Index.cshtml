@@ -1,24 +1,25 @@
 ﻿@model ServiceCRM.Models.ServiceCentersListViewModel
+@inject Microsoft.AspNetCore.Mvc.Localization.IViewLocalizer Localizer
 @using ServiceCRM.Models
 @{
-    ViewData["Title"] = "Сервисы";
+    ViewData["Title"] = @Localizer["Title"];
 }
 
 <div class="d-flex flex-column flex-md-row align-items-md-center justify-content-between mb-4">
-    <h2>Сервисы</h2>
-    <a class="btn btn-outline-primary btn-lg" asp-controller="ServiceCenters" asp-action="Create">+ Создать сервис</a>
+    <h2>@Localizer["Subtitle"]</h2>
+    <a class="btn btn-outline-primary btn-lg" asp-controller="ServiceCenters" asp-action="Create">@Localizer["CreateServiceButton"]</a>
 </div>
 
 <div class="table-responsive shadow-sm rounded-3">
     <table class="table table-hover align-middle mb-0">
         <thead>
             <tr>
-                <th>ID</th>
-                <th>Дата создания</th>
-                <th>Название</th>
-                <th>Администратор</th>
-                <th>Участники</th>
-                <th class="text-end">Действия</th>
+                <th>@Localizer["ColumnIdTable"]</th>
+                <th>@Localizer["ColumnDateTable"]</th>
+                <th>@Localizer["ColumnNameTable"]</th>
+                <th>@Localizer["ColumnAdminTable"]</th>
+                <th>@Localizer["ColumnMembersTable"]</th>
+                <th class="text-end">@Localizer["ColumnActionsTable"]</th>
             </tr>
         </thead>
         <tbody>
@@ -46,7 +47,7 @@
                                asp-controller="ServiceCenters"
                                asp-action="Edit"
                                asp-route-id="@service.Id">
-                                Редактировать
+                                @Localizer["EditButton"]
                             </a>
 
                             <form method="post"
@@ -54,8 +55,10 @@
                                   asp-action="Delete"
                                   asp-route-id="@service.Id"
                                   style="display:inline;"
-                                  onsubmit="return confirm('Удалить сервис?');">
-                                <button type="submit" class="btn btn-sm btn-outline-danger">Удалить</button>
+                                  onsubmit="return confirm('@Localizer["DeleteConfirm"]');">
+                                <button type="submit" class="btn btn-sm btn-outline-danger">
+                                    @Localizer["DeleteButton"]
+                                </button>
                             </form>
                         }
                         else
@@ -65,9 +68,9 @@
                                   asp-action="Leave"
                                   asp-route-id="@service.Id"
                                   style="display:inline;"
-                                  onsubmit="return confirm('Покинуть сервис?');">
+                                  onsubmit="return confirm('@Localizer["LeaveConfirm"]');">
                                 <button type="submit" class="btn btn-sm btn-outline-primary">
-                                    Покинуть
+                                    @Localizer["LeaveButton"]
                                 </button>
                             </form>
                         }
