@@ -61,10 +61,10 @@ public class OrdersController : Controller
 
         q = sort switch
         {
+            "sum_desc" => q.OrderByDescending(o => (double)o.Amount),
+            "sum_asc" => q.OrderBy(o => (double)o.Amount),
             "created_desc" => q.OrderByDescending(o => o.CreatedAt),
             "created_asc" => q.OrderBy(o => o.CreatedAt),
-            "sum_desc" => q.OrderByDescending(o => o.Amount),
-            "sum_asc" => q.OrderBy(o => o.Amount),
             "status_asc" => q.OrderBy(o => o.Status),
             "status_desc" => q.OrderByDescending(o => o.Status),
             _ => q.OrderByDescending(o => o.CreatedAt)
@@ -105,10 +105,10 @@ public class OrdersController : Controller
 
         q = sort switch
         {
+            "sum_desc" => q.OrderByDescending(o => (double)o.Amount),
+            "sum_asc" => q.OrderBy(o => (double)o.Amount),
             "created_desc" => q.OrderByDescending(o => o.CreatedAt),
             "created_asc" => q.OrderBy(o => o.CreatedAt),
-            "sum_desc" => q.OrderByDescending(o => o.Amount),
-            "sum_asc" => q.OrderBy(o => o.Amount),
             "status_asc" => q.OrderBy(o => o.Status),
             "status_desc" => q.OrderByDescending(o => o.Status),
             _ => q.OrderByDescending(o => o.CreatedAt)

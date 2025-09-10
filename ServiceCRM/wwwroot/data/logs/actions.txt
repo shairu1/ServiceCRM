@@ -23,3 +23,11 @@
 [2025-09-08 21:26:11] SettingsController.Logout : User logged out
 [2025-09-08 21:26:11] HomeController.Index : Page opened
 [2025-09-08 22:07:35] HomeController.Index : Page opened
+[2025-09-09 20:04:30] HomeController.Index : Page opened
+[2025-09-10 22:51:59] HomeController.Index : Page opened
+[2025-09-10 23:12:23] LanguageController.Set : Culture set to en
+[2025-09-10 23:12:23] LanguageController.Set : Redirect to /Auth/Register
+[2025-09-10 23:27:11] AuthController.Login : User logged in successfully
+[2025-09-10 23:27:11] HomeController.Index : Page opened
+[2025-09-10 23:31:19] OrdersController.Delete : Order deleted
+[2025-09-11 00:20:58] HomeController.Index : Page opened
