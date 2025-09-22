@@ -31,3 +31,46 @@
 [2025-09-10 23:27:11] HomeController.Index : Page opened
 [2025-09-10 23:31:19] OrdersController.Delete : Order deleted
 [2025-09-11 00:20:58] HomeController.Index : Page opened
+[2025-09-11 00:29:24] SettingsController.Index : User artik opened settings
+[2025-09-11 00:29:26] LanguageController.Set : Culture set to ru
+[2025-09-11 00:29:26] LanguageController.Set : Redirect to /Settings
+[2025-09-11 00:29:26] SettingsController.Index : User artik opened settings
+[2025-09-12 22:56:51] HomeController.Index : Page opened
+[2025-09-12 22:57:02] AuthController.Login : User logged in successfully
+[2025-09-12 22:57:02] HomeController.Index : Page opened
+[2025-09-12 22:57:04] ServiceCentersController.Index : User e671456a-5ddc-4804-a94e-52ae39de040e opened ServiceCenters list
+[2025-09-12 22:57:24] ServiceCentersController.Index : User e671456a-5ddc-4804-a94e-52ae39de040e opened ServiceCenters list
+[2025-09-12 22:57:28] ServiceCentersController.Create : ServiceCenter '	Platinum' created by user e671456a-5ddc-4804-a94e-52ae39de040e
+[2025-09-12 22:57:28] ServiceCentersController.Index : User e671456a-5ddc-4804-a94e-52ae39de040e opened ServiceCenters list
+[2025-09-12 22:57:33] ServiceCentersController.Create : ServiceCenter 'Platinum' created by user e671456a-5ddc-4804-a94e-52ae39de040e
+[2025-09-12 22:57:33] ServiceCentersController.Index : User e671456a-5ddc-4804-a94e-52ae39de040e opened ServiceCenters list
+[2025-09-12 22:57:42] ServiceCentersController.Delete : ServiceCenter '	Platinum' deleted by user e671456a-5ddc-4804-a94e-52ae39de040e
+[2025-09-12 22:57:42] ServiceCentersController.Index : User e671456a-5ddc-4804-a94e-52ae39de040e opened ServiceCenters list
+[2025-09-12 22:57:45] ServiceCentersController.Delete : ServiceCenter 'Platinum' deleted by user e671456a-5ddc-4804-a94e-52ae39de040e
+[2025-09-12 22:57:45] ServiceCentersController.Index : User e671456a-5ddc-4804-a94e-52ae39de040e opened ServiceCenters list
+[2025-09-12 22:58:06] ServiceCentersController.Index : User e671456a-5ddc-4804-a94e-52ae39de040e opened ServiceCenters list
+[2025-09-12 22:58:10] ServiceCentersController.Create : ServiceCenter '234' created by user e671456a-5ddc-4804-a94e-52ae39de040e
+[2025-09-12 22:58:10] ServiceCentersController.Index : User e671456a-5ddc-4804-a94e-52ae39de040e opened ServiceCenters list
+[2025-09-12 22:58:12] ServiceCentersController.Delete : ServiceCenter '234' deleted by user e671456a-5ddc-4804-a94e-52ae39de040e
+[2025-09-12 22:58:12] ServiceCentersController.Index : User e671456a-5ddc-4804-a94e-52ae39de040e opened ServiceCenters list
+[2025-09-12 22:58:14] ServiceCentersController.Delete : ServiceCenter 'Platinum' deleted by user e671456a-5ddc-4804-a94e-52ae39de040e
+[2025-09-12 22:58:14] ServiceCentersController.Index : User e671456a-5ddc-4804-a94e-52ae39de040e opened ServiceCenters list
+[2025-09-12 22:58:21] SettingsController.Index : User artik opened settings
+[2025-09-12 22:58:22] SettingsController.Logout : User logged out
+[2025-09-12 22:58:22] HomeController.Index : Page opened
+[2025-09-12 22:58:24] HomeController.Index : Page opened
+[2025-09-12 22:59:23] HomeController.Index : Page opened
+[2025-09-12 22:59:38] AuthController.Login : User logged in successfully
+[2025-09-12 22:59:38] HomeController.Index : Page opened
+[2025-09-12 22:59:39] ServiceCentersController.Index : User e671456a-5ddc-4804-a94e-52ae39de040e opened ServiceCenters list
+[2025-09-12 22:59:44] ServiceCentersController.Create : ServiceCenter '123' created by user e671456a-5ddc-4804-a94e-52ae39de040e
+[2025-09-12 22:59:44] ServiceCentersController.Index : User e671456a-5ddc-4804-a94e-52ae39de040e opened ServiceCenters list
+[2025-09-12 22:59:45] ServiceCentersController.Select : User e671456a-5ddc-4804-a94e-52ae39de040e selected ServiceCenter 26
+[2025-09-12 22:59:45] ServiceCentersController.Index : User e671456a-5ddc-4804-a94e-52ae39de040e opened ServiceCenters list
+[2025-09-12 22:59:47] ServiceCentersController.Index : User e671456a-5ddc-4804-a94e-52ae39de040e opened ServiceCenters list
+[2025-09-12 22:59:48] HomeController.Index : Page opened
+[2025-09-12 23:00:09] SettingsController.Index : User artik opened settings
+[2025-09-12 23:00:11] ServiceCentersController.Index : User e671456a-5ddc-4804-a94e-52ae39de040e opened ServiceCenters list
+[2025-09-12 23:00:13] ServiceCentersController.Index : User e671456a-5ddc-4804-a94e-52ae39de040e opened ServiceCenters list
+[2025-09-12 23:04:51] ServiceCentersController.Index : User e671456a-5ddc-4804-a94e-52ae39de040e opened ServiceCenters list
+[2025-09-12 23:04:52] ServiceCentersController.Edit(GET) : User opened edit page for ServiceCenter 26

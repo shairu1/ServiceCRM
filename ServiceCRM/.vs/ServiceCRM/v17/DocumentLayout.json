@@ -3,16 +3,24 @@
   "WorkspaceRootPath": "C:\\Users\\shair\\Desktop\\CHSU\\3 year\\2\u0441_\u0421#-\u043F\u0440\u043E\u0433\u0440\u0430\u043C\u043C\u0438\u0440\u043E\u0432\u0430\u043D\u0438\u0435\\ServiceCRM\\ServiceCRM\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{EB8DBADB-25D5-4140-86F6-C2DE554A2C3B}|ServiceCRM.csproj|c:\\users\\shair\\desktop\\chsu\\3 year\\2\u0441_\u0441#-\u043F\u0440\u043E\u0433\u0440\u0430\u043C\u043C\u0438\u0440\u043E\u0432\u0430\u043D\u0438\u0435\\servicecrm\\servicecrm\\controllers\\servicecenterscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{EB8DBADB-25D5-4140-86F6-C2DE554A2C3B}|ServiceCRM.csproj|solutionrelative:controllers\\servicecenterscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{EB8DBADB-25D5-4140-86F6-C2DE554A2C3B}|ServiceCRM.csproj|c:\\users\\shair\\desktop\\chsu\\3 year\\2\u0441_\u0441#-\u043F\u0440\u043E\u0433\u0440\u0430\u043C\u043C\u0438\u0440\u043E\u0432\u0430\u043D\u0438\u0435\\servicecrm\\servicecrm\\views\\servicecenters\\create.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{EB8DBADB-25D5-4140-86F6-C2DE554A2C3B}|ServiceCRM.csproj|solutionrelative:views\\servicecenters\\create.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{EB8DBADB-25D5-4140-86F6-C2DE554A2C3B}|ServiceCRM.csproj|c:\\users\\shair\\desktop\\chsu\\3 year\\2\u0441_\u0441#-\u043F\u0440\u043E\u0433\u0440\u0430\u043C\u043C\u0438\u0440\u043E\u0432\u0430\u043D\u0438\u0435\\servicecrm\\servicecrm\\views\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{EB8DBADB-25D5-4140-86F6-C2DE554A2C3B}|ServiceCRM.csproj|solutionrelative:views\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{EB8DBADB-25D5-4140-86F6-C2DE554A2C3B}|ServiceCRM.csproj|c:\\users\\shair\\desktop\\chsu\\3 year\\2\u0441_\u0441#-\u043F\u0440\u043E\u0433\u0440\u0430\u043C\u043C\u0438\u0440\u043E\u0432\u0430\u043D\u0438\u0435\\servicecrm\\servicecrm\\controllers\\orderscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{EB8DBADB-25D5-4140-86F6-C2DE554A2C3B}|ServiceCRM.csproj|solutionrelative:controllers\\orderscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{EB8DBADB-25D5-4140-86F6-C2DE554A2C3B}|ServiceCRM.csproj|c:\\users\\shair\\desktop\\chsu\\3 year\\2\u0441_\u0441#-\u043F\u0440\u043E\u0433\u0440\u0430\u043C\u043C\u0438\u0440\u043E\u0432\u0430\u043D\u0438\u0435\\servicecrm\\servicecrm\\controllers\\authcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{EB8DBADB-25D5-4140-86F6-C2DE554A2C3B}|ServiceCRM.csproj|solutionrelative:controllers\\authcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{EB8DBADB-25D5-4140-86F6-C2DE554A2C3B}|ServiceCRM.csproj|c:\\users\\shair\\desktop\\chsu\\3 year\\2\u0441_\u0441#-\u043F\u0440\u043E\u0433\u0440\u0430\u043C\u043C\u0438\u0440\u043E\u0432\u0430\u043D\u0438\u0435\\servicecrm\\servicecrm\\controllers\\servicecenterscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{EB8DBADB-25D5-4140-86F6-C2DE554A2C3B}|ServiceCRM.csproj|solutionrelative:controllers\\servicecenterscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{EB8DBADB-25D5-4140-86F6-C2DE554A2C3B}|ServiceCRM.csproj|c:\\users\\shair\\desktop\\chsu\\3 year\\2\u0441_\u0441#-\u043F\u0440\u043E\u0433\u0440\u0430\u043C\u043C\u0438\u0440\u043E\u0432\u0430\u043D\u0438\u0435\\servicecrm\\servicecrm\\wwwroot\\data\\logs\\actions.txt||{8B382828-6202-11D1-8870-0000F87579D2}",
@@ -49,10 +57,6 @@
     {
       "AbsoluteMoniker": "D:0:0:{EB8DBADB-25D5-4140-86F6-C2DE554A2C3B}|ServiceCRM.csproj|c:\\users\\shair\\desktop\\chsu\\3 year\\2\u0441_\u0441#-\u043F\u0440\u043E\u0433\u0440\u0430\u043C\u043C\u0438\u0440\u043E\u0432\u0430\u043D\u0438\u0435\\servicecrm\\servicecrm\\views\\shared\\components\\userservicecenters\\default.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
       "RelativeMoniker": "D:0:0:{EB8DBADB-25D5-4140-86F6-C2DE554A2C3B}|ServiceCRM.csproj|solutionrelative:views\\shared\\components\\userservicecenters\\default.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{EB8DBADB-25D5-4140-86F6-C2DE554A2C3B}|ServiceCRM.csproj|c:\\users\\shair\\desktop\\chsu\\3 year\\2\u0441_\u0441#-\u043F\u0440\u043E\u0433\u0440\u0430\u043C\u043C\u0438\u0440\u043E\u0432\u0430\u043D\u0438\u0435\\servicecrm\\servicecrm\\views\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{EB8DBADB-25D5-4140-86F6-C2DE554A2C3B}|ServiceCRM.csproj|solutionrelative:views\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{EB8DBADB-25D5-4140-86F6-C2DE554A2C3B}|ServiceCRM.csproj|c:\\users\\shair\\desktop\\chsu\\3 year\\2\u0441_\u0441#-\u043F\u0440\u043E\u0433\u0440\u0430\u043C\u043C\u0438\u0440\u043E\u0432\u0430\u043D\u0438\u0435\\servicecrm\\servicecrm\\views\\analytics\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
@@ -172,17 +176,17 @@
         },
         {
           "DockedWidth": 427,
-          "SelectedChildIndex": 0,
+          "SelectedChildIndex": 7,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 3,
               "Title": "OrdersController.cs",
               "DocumentMoniker": "C:\\Users\\shair\\Desktop\\CHSU\\3 year\\2\u0441_\u0421#-\u043F\u0440\u043E\u0433\u0440\u0430\u043C\u043C\u0438\u0440\u043E\u0432\u0430\u043D\u0438\u0435\\ServiceCRM\\ServiceCRM\\Controllers\\OrdersController.cs",
               "RelativeDocumentMoniker": "Controllers\\OrdersController.cs",
               "ToolTip": "C:\\Users\\shair\\Desktop\\CHSU\\3 year\\2\u0441_\u0421#-\u043F\u0440\u043E\u0433\u0440\u0430\u043C\u043C\u0438\u0440\u043E\u0432\u0430\u043D\u0438\u0435\\ServiceCRM\\ServiceCRM\\Controllers\\OrdersController.cs",
               "RelativeToolTip": "Controllers\\OrdersController.cs",
-              "ViewState": "AgIAAGIAAAAAAAAAAAAwwHIAAAAKAAAAAAAAAA==",
+              "ViewState": "AgIAAOAAAAAAAAAAAAAuwMwAAAA0AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-09-07T16:20:29.796Z",
               "IsPinned": true,
@@ -190,32 +194,20 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "ServiceCentersController.cs",
-              "DocumentMoniker": "C:\\Users\\shair\\Desktop\\CHSU\\3 year\\2\u0441_\u0421#-\u043F\u0440\u043E\u0433\u0440\u0430\u043C\u043C\u0438\u0440\u043E\u0432\u0430\u043D\u0438\u0435\\ServiceCRM\\ServiceCRM\\Controllers\\ServiceCentersController.cs",
-              "RelativeDocumentMoniker": "Controllers\\ServiceCentersController.cs",
-              "ToolTip": "C:\\Users\\shair\\Desktop\\CHSU\\3 year\\2\u0441_\u0421#-\u043F\u0440\u043E\u0433\u0440\u0430\u043C\u043C\u0438\u0440\u043E\u0432\u0430\u043D\u0438\u0435\\ServiceCRM\\ServiceCRM\\Controllers\\ServiceCentersController.cs",
-              "RelativeToolTip": "Controllers\\ServiceCentersController.cs",
-              "ViewState": "AgIAADwBAAAAAAAAAAAAAD8BAABWAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-09-05T18:09:05.615Z",
+              "DocumentIndex": 1,
+              "Title": "Create.cshtml",
+              "DocumentMoniker": "C:\\Users\\shair\\Desktop\\CHSU\\3 year\\2\u0441_\u0421#-\u043F\u0440\u043E\u0433\u0440\u0430\u043C\u043C\u0438\u0440\u043E\u0432\u0430\u043D\u0438\u0435\\ServiceCRM\\ServiceCRM\\Views\\ServiceCenters\\Create.cshtml",
+              "RelativeDocumentMoniker": "Views\\ServiceCenters\\Create.cshtml",
+              "ToolTip": "C:\\Users\\shair\\Desktop\\CHSU\\3 year\\2\u0441_\u0421#-\u043F\u0440\u043E\u0433\u0440\u0430\u043C\u043C\u0438\u0440\u043E\u0432\u0430\u043D\u0438\u0435\\ServiceCRM\\ServiceCRM\\Views\\ServiceCenters\\Create.cshtml",
+              "RelativeToolTip": "Views\\ServiceCenters\\Create.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-09-12T20:01:26.945Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 8,
-              "Title": "SettingsController.cs",
-              "DocumentMoniker": "C:\\Users\\shair\\Desktop\\CHSU\\3 year\\2\u0441_\u0421#-\u043F\u0440\u043E\u0433\u0440\u0430\u043C\u043C\u0438\u0440\u043E\u0432\u0430\u043D\u0438\u0435\\ServiceCRM\\ServiceCRM\\Controllers\\SettingsController.cs",
-              "RelativeDocumentMoniker": "Controllers\\SettingsController.cs",
-              "ToolTip": "C:\\Users\\shair\\Desktop\\CHSU\\3 year\\2\u0441_\u0421#-\u043F\u0440\u043E\u0433\u0440\u0430\u043C\u043C\u0438\u0440\u043E\u0432\u0430\u043D\u0438\u0435\\ServiceCRM\\ServiceCRM\\Controllers\\SettingsController.cs",
-              "RelativeToolTip": "Controllers\\SettingsController.cs",
-              "ViewState": "AgIAAIIAAAAAAAAAAAAAAJsAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-09-05T18:09:17.971Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 6,
               "Title": "Login.cshtml",
               "DocumentMoniker": "C:\\Users\\shair\\Desktop\\CHSU\\3 year\\2\u0441_\u0421#-\u043F\u0440\u043E\u0433\u0440\u0430\u043C\u043C\u0438\u0440\u043E\u0432\u0430\u043D\u0438\u0435\\ServiceCRM\\ServiceCRM\\Views\\Auth\\Login.cshtml",
               "RelativeDocumentMoniker": "Views\\Auth\\Login.cshtml",
@@ -227,7 +219,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 7,
               "Title": "Register.cshtml",
               "DocumentMoniker": "C:\\Users\\shair\\Desktop\\CHSU\\3 year\\2\u0441_\u0421#-\u043F\u0440\u043E\u0433\u0440\u0430\u043C\u043C\u0438\u0440\u043E\u0432\u0430\u043D\u0438\u0435\\ServiceCRM\\ServiceCRM\\Views\\Auth\\Register.cshtml",
               "RelativeDocumentMoniker": "Views\\Auth\\Register.cshtml",
@@ -239,7 +231,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 6,
               "Title": "HomeController.cs",
               "DocumentMoniker": "C:\\Users\\shair\\Desktop\\CHSU\\3 year\\2\u0441_\u0421#-\u043F\u0440\u043E\u0433\u0440\u0430\u043C\u043C\u0438\u0440\u043E\u0432\u0430\u043D\u0438\u0435\\ServiceCRM\\ServiceCRM\\Controllers\\HomeController.cs",
               "RelativeDocumentMoniker": "Controllers\\HomeController.cs",
@@ -247,12 +239,11 @@
               "RelativeToolTip": "Controllers\\HomeController.cs",
               "ViewState": "AgIAAA0AAAAAAAAAAAAAACYAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-09-08T17:50:35.504Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-09-08T17:50:35.504Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 5,
               "Title": "actions.txt",
               "DocumentMoniker": "C:\\Users\\shair\\Desktop\\CHSU\\3 year\\2\u0441_\u0421#-\u043F\u0440\u043E\u0433\u0440\u0430\u043C\u043C\u0438\u0440\u043E\u0432\u0430\u043D\u0438\u0435\\ServiceCRM\\ServiceCRM\\wwwroot\\data\\logs\\actions.txt",
               "RelativeDocumentMoniker": "wwwroot\\data\\logs\\actions.txt",
@@ -260,12 +251,11 @@
               "RelativeToolTip": "wwwroot\\data\\logs\\actions.txt",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAEAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003109|",
-              "WhenOpened": "2025-09-08T17:55:43.545Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-09-08T17:55:43.545Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 4,
               "Title": "AuthController.cs",
               "DocumentMoniker": "C:\\Users\\shair\\Desktop\\CHSU\\3 year\\2\u0441_\u0421#-\u043F\u0440\u043E\u0433\u0440\u0430\u043C\u043C\u0438\u0440\u043E\u0432\u0430\u043D\u0438\u0435\\ServiceCRM\\ServiceCRM\\Controllers\\AuthController.cs",
               "RelativeDocumentMoniker": "Controllers\\AuthController.cs",
@@ -273,12 +263,49 @@
               "RelativeToolTip": "Controllers\\AuthController.cs",
               "ViewState": "AgIAAEMAAAAAAAAAAAAwwDAAAAAlAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-09-08T17:45:58.82Z",
+              "WhenOpened": "2025-09-08T17:45:58.82Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "ServiceCentersController.cs",
+              "DocumentMoniker": "C:\\Users\\shair\\Desktop\\CHSU\\3 year\\2\u0441_\u0421#-\u043F\u0440\u043E\u0433\u0440\u0430\u043C\u043C\u0438\u0440\u043E\u0432\u0430\u043D\u0438\u0435\\ServiceCRM\\ServiceCRM\\Controllers\\ServiceCentersController.cs",
+              "RelativeDocumentMoniker": "Controllers\\ServiceCentersController.cs",
+              "ToolTip": "C:\\Users\\shair\\Desktop\\CHSU\\3 year\\2\u0441_\u0421#-\u043F\u0440\u043E\u0433\u0440\u0430\u043C\u043C\u0438\u0440\u043E\u0432\u0430\u043D\u0438\u0435\\ServiceCRM\\ServiceCRM\\Controllers\\ServiceCentersController.cs",
+              "RelativeToolTip": "Controllers\\ServiceCentersController.cs",
+              "ViewState": "AgIAAOkAAAAAAAAAAAAiwD8BAABWAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-09-05T18:09:05.615Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 9,
+              "DocumentIndex": 10,
+              "Title": "SettingsController.cs",
+              "DocumentMoniker": "C:\\Users\\shair\\Desktop\\CHSU\\3 year\\2\u0441_\u0421#-\u043F\u0440\u043E\u0433\u0440\u0430\u043C\u043C\u0438\u0440\u043E\u0432\u0430\u043D\u0438\u0435\\ServiceCRM\\ServiceCRM\\Controllers\\SettingsController.cs",
+              "RelativeDocumentMoniker": "Controllers\\SettingsController.cs",
+              "ToolTip": "C:\\Users\\shair\\Desktop\\CHSU\\3 year\\2\u0441_\u0421#-\u043F\u0440\u043E\u0433\u0440\u0430\u043C\u043C\u0438\u0440\u043E\u0432\u0430\u043D\u0438\u0435\\ServiceCRM\\ServiceCRM\\Controllers\\SettingsController.cs",
+              "RelativeToolTip": "Controllers\\SettingsController.cs",
+              "ViewState": "AgIAAIIAAAAAAAAAAAAAAJsAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-09-05T18:09:17.971Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "_Layout.cshtml",
+              "DocumentMoniker": "C:\\Users\\shair\\Desktop\\CHSU\\3 year\\2\u0441_\u0421#-\u043F\u0440\u043E\u0433\u0440\u0430\u043C\u043C\u0438\u0440\u043E\u0432\u0430\u043D\u0438\u0435\\ServiceCRM\\ServiceCRM\\Views\\Shared\\_Layout.cshtml",
+              "RelativeDocumentMoniker": "Views\\Shared\\_Layout.cshtml",
+              "ToolTip": "C:\\Users\\shair\\Desktop\\CHSU\\3 year\\2\u0441_\u0421#-\u043F\u0440\u043E\u0433\u0440\u0430\u043C\u043C\u0438\u0440\u043E\u0432\u0430\u043D\u0438\u0435\\ServiceCRM\\ServiceCRM\\Views\\Shared\\_Layout.cshtml",
+              "RelativeToolTip": "Views\\Shared\\_Layout.cshtml",
+              "ViewState": "AgIAAP8AAAAAAAAAAAAhwOgAAABYAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-09-08T15:28:41.544Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 11,
               "Title": "LanguageController.cs",
               "DocumentMoniker": "C:\\Users\\shair\\Desktop\\CHSU\\3 year\\2\u0441_\u0421#-\u043F\u0440\u043E\u0433\u0440\u0430\u043C\u043C\u0438\u0440\u043E\u0432\u0430\u043D\u0438\u0435\\ServiceCRM\\ServiceCRM\\Controllers\\LanguageController.cs",
               "RelativeDocumentMoniker": "Controllers\\LanguageController.cs",
@@ -290,7 +317,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 7,
+              "DocumentIndex": 9,
               "Title": "TestDataController.cs",
               "DocumentMoniker": "C:\\Users\\shair\\Desktop\\CHSU\\3 year\\2\u0441_\u0421#-\u043F\u0440\u043E\u0433\u0440\u0430\u043C\u043C\u0438\u0440\u043E\u0432\u0430\u043D\u0438\u0435\\ServiceCRM\\ServiceCRM\\Controllers\\TestDataController.cs",
               "RelativeDocumentMoniker": "Controllers\\TestDataController.cs",
@@ -302,7 +329,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 10,
+              "DocumentIndex": 12,
               "Title": "AnalyticsController.cs",
               "DocumentMoniker": "C:\\Users\\shair\\Desktop\\CHSU\\3 year\\2\u0441_\u0421#-\u043F\u0440\u043E\u0433\u0440\u0430\u043C\u043C\u0438\u0440\u043E\u0432\u0430\u043D\u0438\u0435\\ServiceCRM\\ServiceCRM\\Controllers\\AnalyticsController.cs",
               "RelativeDocumentMoniker": "Controllers\\AnalyticsController.cs",
@@ -314,7 +341,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 11,
+              "DocumentIndex": 13,
               "Title": "Default.cshtml",
               "DocumentMoniker": "C:\\Users\\shair\\Desktop\\CHSU\\3 year\\2\u0441_\u0421#-\u043F\u0440\u043E\u0433\u0440\u0430\u043C\u043C\u0438\u0440\u043E\u0432\u0430\u043D\u0438\u0435\\ServiceCRM\\ServiceCRM\\Views\\Shared\\Components\\UserServiceCenters\\Default.cshtml",
               "RelativeDocumentMoniker": "Views\\Shared\\Components\\UserServiceCenters\\Default.cshtml",
@@ -326,19 +353,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 12,
-              "Title": "_Layout.cshtml",
-              "DocumentMoniker": "C:\\Users\\shair\\Desktop\\CHSU\\3 year\\2\u0441_\u0421#-\u043F\u0440\u043E\u0433\u0440\u0430\u043C\u043C\u0438\u0440\u043E\u0432\u0430\u043D\u0438\u0435\\ServiceCRM\\ServiceCRM\\Views\\Shared\\_Layout.cshtml",
-              "RelativeDocumentMoniker": "Views\\Shared\\_Layout.cshtml",
-              "ToolTip": "C:\\Users\\shair\\Desktop\\CHSU\\3 year\\2\u0441_\u0421#-\u043F\u0440\u043E\u0433\u0440\u0430\u043C\u043C\u0438\u0440\u043E\u0432\u0430\u043D\u0438\u0435\\ServiceCRM\\ServiceCRM\\Views\\Shared\\_Layout.cshtml",
-              "RelativeToolTip": "Views\\Shared\\_Layout.cshtml",
-              "ViewState": "AgIAAPwAAAAAAAAAAAAhwAwBAAAyAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-09-08T15:28:41.544Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 16,
+              "DocumentIndex": 17,
               "Title": "_OrdersRows.cshtml",
               "DocumentMoniker": "C:\\Users\\shair\\Desktop\\CHSU\\3 year\\2\u0441_\u0421#-\u043F\u0440\u043E\u0433\u0440\u0430\u043C\u043C\u0438\u0440\u043E\u0432\u0430\u043D\u0438\u0435\\ServiceCRM\\ServiceCRM\\Views\\Orders\\_OrdersRows.cshtml",
               "RelativeDocumentMoniker": "Views\\Orders\\_OrdersRows.cshtml",
@@ -350,7 +365,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 17,
+              "DocumentIndex": 18,
               "Title": "Index.cshtml",
               "DocumentMoniker": "C:\\Users\\shair\\Desktop\\CHSU\\3 year\\2\u0441_\u0421#-\u043F\u0440\u043E\u0433\u0440\u0430\u043C\u043C\u0438\u0440\u043E\u0432\u0430\u043D\u0438\u0435\\ServiceCRM\\ServiceCRM\\Views\\TestData\\Index.cshtml",
               "RelativeDocumentMoniker": "Views\\TestData\\Index.cshtml",
@@ -362,7 +377,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 15,
+              "DocumentIndex": 16,
               "Title": "Index.cshtml",
               "DocumentMoniker": "C:\\Users\\shair\\Desktop\\CHSU\\3 year\\2\u0441_\u0421#-\u043F\u0440\u043E\u0433\u0440\u0430\u043C\u043C\u0438\u0440\u043E\u0432\u0430\u043D\u0438\u0435\\ServiceCRM\\ServiceCRM\\Views\\Orders\\Index.cshtml",
               "RelativeDocumentMoniker": "Views\\Orders\\Index.cshtml",
@@ -374,7 +389,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 13,
+              "DocumentIndex": 14,
               "Title": "Index.cshtml",
               "DocumentMoniker": "C:\\Users\\shair\\Desktop\\CHSU\\3 year\\2\u0441_\u0421#-\u043F\u0440\u043E\u0433\u0440\u0430\u043C\u043C\u0438\u0440\u043E\u0432\u0430\u043D\u0438\u0435\\ServiceCRM\\ServiceCRM\\Views\\Analytics\\Index.cshtml",
               "RelativeDocumentMoniker": "Views\\Analytics\\Index.cshtml",
@@ -386,7 +401,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 14,
+              "DocumentIndex": 15,
               "Title": "AnalyticsViewModel.cs",
               "DocumentMoniker": "C:\\Users\\shair\\Desktop\\CHSU\\3 year\\2\u0441_\u0421#-\u043F\u0440\u043E\u0433\u0440\u0430\u043C\u043C\u0438\u0440\u043E\u0432\u0430\u043D\u0438\u0435\\ServiceCRM\\ServiceCRM\\Models\\Analytics\\AnalyticsViewModel.cs",
               "RelativeDocumentMoniker": "Models\\Analytics\\AnalyticsViewModel.cs",
@@ -398,7 +413,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 18,
+              "DocumentIndex": 19,
               "Title": "Program.cs",
               "DocumentMoniker": "C:\\Users\\shair\\Desktop\\CHSU\\3 year\\2\u0441_\u0421#-\u043F\u0440\u043E\u0433\u0440\u0430\u043C\u043C\u0438\u0440\u043E\u0432\u0430\u043D\u0438\u0435\\ServiceCRM\\ServiceCRM\\Program.cs",
               "RelativeDocumentMoniker": "Program.cs",
@@ -410,7 +425,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 19,
+              "DocumentIndex": 20,
               "Title": "TestDataGenerator.cs",
               "DocumentMoniker": "C:\\Users\\shair\\Desktop\\CHSU\\3 year\\2\u0441_\u0421#-\u043F\u0440\u043E\u0433\u0440\u0430\u043C\u043C\u0438\u0440\u043E\u0432\u0430\u043D\u0438\u0435\\ServiceCRM\\ServiceCRM\\Data\\TestDataGenerator.cs",
               "RelativeDocumentMoniker": "Data\\TestDataGenerator.cs",
@@ -422,7 +437,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 20,
+              "DocumentIndex": 21,
               "Title": "Views.Analytics.Index.en.resx",
               "DocumentMoniker": "C:\\Users\\shair\\Desktop\\CHSU\\3 year\\2\u0441_\u0421#-\u043F\u0440\u043E\u0433\u0440\u0430\u043C\u043C\u0438\u0440\u043E\u0432\u0430\u043D\u0438\u0435\\ServiceCRM\\ServiceCRM\\Resources\\Views.Analytics.Index.en.resx",
               "RelativeDocumentMoniker": "Resources\\Views.Analytics.Index.en.resx",
@@ -433,7 +448,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 22,
+              "DocumentIndex": 23,
               "Title": "Index.cshtml",
               "DocumentMoniker": "C:\\Users\\shair\\Desktop\\CHSU\\3 year\\2\u0441_\u0421#-\u043F\u0440\u043E\u0433\u0440\u0430\u043C\u043C\u0438\u0440\u043E\u0432\u0430\u043D\u0438\u0435\\ServiceCRM\\ServiceCRM\\Views\\Home\\Index.cshtml",
               "RelativeDocumentMoniker": "Views\\Home\\Index.cshtml",
@@ -445,7 +460,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 23,
+              "DocumentIndex": 24,
               "Title": "Views.Home.Index.en.resx",
               "DocumentMoniker": "C:\\Users\\shair\\Desktop\\CHSU\\3 year\\2\u0441_\u0421#-\u043F\u0440\u043E\u0433\u0440\u0430\u043C\u043C\u0438\u0440\u043E\u0432\u0430\u043D\u0438\u0435\\ServiceCRM\\ServiceCRM\\Resources\\Views.Home.Index.en.resx",
               "RelativeDocumentMoniker": "Resources\\Views.Home.Index.en.resx",
@@ -456,7 +471,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 26,
+              "DocumentIndex": 27,
               "Title": "Models.SettingsViewModel.ru.resx",
               "DocumentMoniker": "C:\\Users\\shair\\Desktop\\CHSU\\3 year\\2\u0441_\u0421#-\u043F\u0440\u043E\u0433\u0440\u0430\u043C\u043C\u0438\u0440\u043E\u0432\u0430\u043D\u0438\u0435\\ServiceCRM\\ServiceCRM\\Resources\\Models.SettingsViewModel.ru.resx",
               "RelativeDocumentMoniker": "Resources\\Models.SettingsViewModel.ru.resx",
@@ -467,7 +482,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 21,
+              "DocumentIndex": 22,
               "Title": "Order.cs",
               "DocumentMoniker": "C:\\Users\\shair\\Desktop\\CHSU\\3 year\\2\u0441_\u0421#-\u043F\u0440\u043E\u0433\u0440\u0430\u043C\u043C\u0438\u0440\u043E\u0432\u0430\u043D\u0438\u0435\\ServiceCRM\\ServiceCRM\\Models\\Order\\Order.cs",
               "RelativeDocumentMoniker": "Models\\Order\\Order.cs",
@@ -479,7 +494,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 27,
+              "DocumentIndex": 28,
               "Title": "Models.SettingsViewModel.en.resx",
               "DocumentMoniker": "C:\\Users\\shair\\Desktop\\CHSU\\3 year\\2\u0441_\u0421#-\u043F\u0440\u043E\u0433\u0440\u0430\u043C\u043C\u0438\u0440\u043E\u0432\u0430\u043D\u0438\u0435\\ServiceCRM\\ServiceCRM\\Resources\\Models.SettingsViewModel.en.resx",
               "RelativeDocumentMoniker": "Resources\\Models.SettingsViewModel.en.resx",
@@ -490,7 +505,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 28,
+              "DocumentIndex": 29,
               "Title": "EditOrderViewModel.cs",
               "DocumentMoniker": "C:\\Users\\shair\\Desktop\\CHSU\\3 year\\2\u0441_\u0421#-\u043F\u0440\u043E\u0433\u0440\u0430\u043C\u043C\u0438\u0440\u043E\u0432\u0430\u043D\u0438\u0435\\ServiceCRM\\ServiceCRM\\Models\\Order\\EditOrderViewModel.cs",
               "RelativeDocumentMoniker": "Models\\Order\\EditOrderViewModel.cs",
@@ -502,7 +517,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 24,
+              "DocumentIndex": 25,
               "Title": "LoginViewModel.cs",
               "DocumentMoniker": "C:\\Users\\shair\\Desktop\\CHSU\\3 year\\2\u0441_\u0421#-\u043F\u0440\u043E\u0433\u0440\u0430\u043C\u043C\u0438\u0440\u043E\u0432\u0430\u043D\u0438\u0435\\ServiceCRM\\ServiceCRM\\Models\\Auth\\LoginViewModel.cs",
               "RelativeDocumentMoniker": "Models\\Auth\\LoginViewModel.cs",
@@ -514,7 +529,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 25,
+              "DocumentIndex": 26,
               "Title": "Index.cshtml",
               "DocumentMoniker": "C:\\Users\\shair\\Desktop\\CHSU\\3 year\\2\u0441_\u0421#-\u043F\u0440\u043E\u0433\u0440\u0430\u043C\u043C\u0438\u0440\u043E\u0432\u0430\u043D\u0438\u0435\\ServiceCRM\\ServiceCRM\\Views\\Settings\\Index.cshtml",
               "RelativeDocumentMoniker": "Views\\Settings\\Index.cshtml",
@@ -526,7 +541,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 29,
+              "DocumentIndex": 30,
               "Title": "OrderStatus.cs",
               "DocumentMoniker": "C:\\Users\\shair\\Desktop\\CHSU\\3 year\\2\u0441_\u0421#-\u043F\u0440\u043E\u0433\u0440\u0430\u043C\u043C\u0438\u0440\u043E\u0432\u0430\u043D\u0438\u0435\\ServiceCRM\\ServiceCRM\\Models\\Order\\OrderStatus.cs",
               "RelativeDocumentMoniker": "Models\\Order\\OrderStatus.cs",
@@ -538,7 +553,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 30,
+              "DocumentIndex": 31,
               "Title": "SettingsViewModel.cs",
               "DocumentMoniker": "C:\\Users\\shair\\Desktop\\CHSU\\3 year\\2\u0441_\u0421#-\u043F\u0440\u043E\u0433\u0440\u0430\u043C\u043C\u0438\u0440\u043E\u0432\u0430\u043D\u0438\u0435\\ServiceCRM\\ServiceCRM\\Models\\Settings\\SettingsViewModel.cs",
               "RelativeDocumentMoniker": "Models\\Settings\\SettingsViewModel.cs",
@@ -550,7 +565,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 31,
+              "DocumentIndex": 32,
               "Title": "LocalizedIdentityErrorDescriber.cs",
               "DocumentMoniker": "C:\\Users\\shair\\Desktop\\CHSU\\3 year\\2\u0441_\u0421#-\u043F\u0440\u043E\u0433\u0440\u0430\u043C\u043C\u0438\u0440\u043E\u0432\u0430\u043D\u0438\u0435\\ServiceCRM\\ServiceCRM\\Services\\Identity\\LocalizedIdentityErrorDescriber.cs",
               "RelativeDocumentMoniker": "Services\\Identity\\LocalizedIdentityErrorDescriber.cs",
@@ -562,7 +577,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 32,
+              "DocumentIndex": 33,
               "Title": "Models.Auth.LoginViewModel.ru.resx",
               "DocumentMoniker": "C:\\Users\\shair\\Desktop\\CHSU\\3 year\\2\u0441_\u0421#-\u043F\u0440\u043E\u0433\u0440\u0430\u043C\u043C\u0438\u0440\u043E\u0432\u0430\u043D\u0438\u0435\\ServiceCRM\\ServiceCRM\\Resources\\Models.Auth.LoginViewModel.ru.resx",
               "RelativeDocumentMoniker": "Resources\\Models.Auth.LoginViewModel.ru.resx",
@@ -573,7 +588,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 33,
+              "DocumentIndex": 34,
               "Title": "IdentityErrorMessages.ru.resx",
               "DocumentMoniker": "C:\\Users\\shair\\Desktop\\CHSU\\3 year\\2\u0441_\u0421#-\u043F\u0440\u043E\u0433\u0440\u0430\u043C\u043C\u0438\u0440\u043E\u0432\u0430\u043D\u0438\u0435\\ServiceCRM\\ServiceCRM\\Resources\\IdentityErrorMessages.ru.resx",
               "RelativeDocumentMoniker": "Resources\\IdentityErrorMessages.ru.resx",
@@ -584,7 +599,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 34,
+              "DocumentIndex": 35,
               "Title": "Controllers.SettingsController.ru.resx",
               "DocumentMoniker": "C:\\Users\\shair\\Desktop\\CHSU\\3 year\\2\u0441_\u0421#-\u043F\u0440\u043E\u0433\u0440\u0430\u043C\u043C\u0438\u0440\u043E\u0432\u0430\u043D\u0438\u0435\\ServiceCRM\\ServiceCRM\\Resources\\Controllers.SettingsController.ru.resx",
               "RelativeDocumentMoniker": "Resources\\Controllers.SettingsController.ru.resx",
@@ -595,7 +610,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 36,
+              "DocumentIndex": 37,
               "Title": "Index.cshtml",
               "DocumentMoniker": "C:\\Users\\shair\\Desktop\\CHSU\\3 year\\2\u0441_\u0421#-\u043F\u0440\u043E\u0433\u0440\u0430\u043C\u043C\u0438\u0440\u043E\u0432\u0430\u043D\u0438\u0435\\ServiceCRM\\ServiceCRM\\Views\\ServiceCenters\\Index.cshtml",
               "RelativeDocumentMoniker": "Views\\ServiceCenters\\Index.cshtml",
@@ -607,7 +622,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 35,
+              "DocumentIndex": 36,
               "Title": "Views.ServiceCenters.Edit.ru.resx",
               "DocumentMoniker": "C:\\Users\\shair\\Desktop\\CHSU\\3 year\\2\u0441_\u0421#-\u043F\u0440\u043E\u0433\u0440\u0430\u043C\u043C\u0438\u0440\u043E\u0432\u0430\u043D\u0438\u0435\\ServiceCRM\\ServiceCRM\\Resources\\Views.ServiceCenters.Edit.ru.resx",
               "RelativeDocumentMoniker": "Resources\\Views.ServiceCenters.Edit.ru.resx",
@@ -618,7 +633,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 37,
+              "DocumentIndex": 38,
               "Title": "Views.ServiceCenters.Edit.en.resx",
               "DocumentMoniker": "C:\\Users\\shair\\Desktop\\CHSU\\3 year\\2\u0441_\u0421#-\u043F\u0440\u043E\u0433\u0440\u0430\u043C\u043C\u0438\u0440\u043E\u0432\u0430\u043D\u0438\u0435\\ServiceCRM\\ServiceCRM\\Resources\\Views.ServiceCenters.Edit.en.resx",
               "RelativeDocumentMoniker": "Resources\\Views.ServiceCenters.Edit.en.resx",

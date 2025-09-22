@@ -231,11 +231,12 @@
 
                     <!-- Правая часть навигации для десктопа -->
                     <ul class="navbar-nav ms-auto align-items-center desktop-nav-items">
-                        <li class="me-3">
-                            <span class="service-label">@Localizer["ServiceCenterLabel"]</span>
-                        </li>
                         @if (User.Identity?.IsAuthenticated == true && services.Any())
                         {
+                            <li class="me-3">
+                                <span class="service-label">@Localizer["ServiceCenterLabel"]</span>
+                            </li>
+
                             <li class="nav-item d-flex flex-column align-items-start me-3">
                                 @await Component.InvokeAsync("UserServiceCenters", new { selectedServiceId = selectedServiceId })
                             </li>
