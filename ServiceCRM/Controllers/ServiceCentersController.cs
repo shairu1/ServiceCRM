@@ -117,6 +117,8 @@ public class ServiceCentersController : Controller
 
             await _logger.LogAsync($"ServiceCentersController.Create : ServiceCenter '{serviceCenter.Name}' created by user {user.Id}");
 
+            await Select(serviceCenter.Id);
+
             return RedirectToAction(nameof(Index));
         }
         return View(serviceCenterViewModel);

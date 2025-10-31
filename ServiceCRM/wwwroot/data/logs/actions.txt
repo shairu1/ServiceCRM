@@ -74,3 +74,102 @@
 [2025-09-12 23:00:13] ServiceCentersController.Index : User e671456a-5ddc-4804-a94e-52ae39de040e opened ServiceCenters list
 [2025-09-12 23:04:51] ServiceCentersController.Index : User e671456a-5ddc-4804-a94e-52ae39de040e opened ServiceCenters list
 [2025-09-12 23:04:52] ServiceCentersController.Edit(GET) : User opened edit page for ServiceCenter 26
+[2025-10-31 12:51:19] HomeController.Index : Page opened
+[2025-10-31 12:51:48] AuthController.Login : Authentication failed
+[2025-10-31 12:51:59] AuthController.Register : Error - Пароль должен содержать минимум 6 символов.
+[2025-10-31 12:51:59] AuthController.Register : Error - Пароль должен содержать хотя бы одну строчную букву ('a'-'z').
+[2025-10-31 12:52:04] AuthController.Register : Error - Пароль должен содержать хотя бы одну строчную букву ('a'-'z').
+[2025-10-31 12:52:20] AuthController.Register : Error - Пользователь с именем "art" уже существует.
+[2025-10-31 12:52:30] AuthController.Register : User created successfully
+[2025-10-31 12:52:31] HomeController.Index : Page opened
+[2025-10-31 12:52:37] OrdersController.Index : Service is not selected
+[2025-10-31 12:52:40] AnalyticsController.Index : Service is not selected
+[2025-10-31 12:52:42] AnalyticsController.Index : Service is not selected
+[2025-10-31 12:52:43] ServiceCentersController.Index : User 11738c0c-9bc5-4f8b-ab31-e26d86b886d9 opened ServiceCenters list
+[2025-10-31 12:52:44] SettingsController.Index : User artart opened settings
+[2025-10-31 12:52:52] SettingsController.Index(POST) : User artart updated successfully
+[2025-10-31 12:52:52] SettingsController.Index : User artart opened settings
+[2025-10-31 12:52:55] SettingsController.Logout : User logged out
+[2025-10-31 12:52:55] HomeController.Index : Page opened
+[2025-10-31 12:52:57] HomeController.Index : Page opened
+[2025-10-31 12:53:00] AuthController.Login : User logged in successfully
+[2025-10-31 12:53:00] HomeController.Index : Page opened
+[2025-10-31 12:53:02] SettingsController.Index : User artart opened settings
+[2025-10-31 12:53:04] LanguageController.Set : Culture set to en
+[2025-10-31 12:53:04] LanguageController.Set : Redirect to /Settings
+[2025-10-31 12:53:04] SettingsController.Index : User artart opened settings
+[2025-10-31 12:53:09] LanguageController.Set : Culture set to ru
+[2025-10-31 12:53:09] LanguageController.Set : Redirect to /Settings
+[2025-10-31 12:53:09] SettingsController.Index : User artart opened settings
+[2025-10-31 12:53:19] SettingsController.ChangePassword : Password changed for user artart
+[2025-10-31 12:53:19] SettingsController.Index : User artart opened settings
+[2025-10-31 12:53:28] ServiceCentersController.Index : User 11738c0c-9bc5-4f8b-ab31-e26d86b886d9 opened ServiceCenters list
+[2025-10-31 12:53:29] SettingsController.Index : User artart opened settings
+[2025-10-31 12:53:32] SettingsController.Logout : User logged out
+[2025-10-31 12:53:32] HomeController.Index : Page opened
+[2025-10-31 12:53:38] AuthController.Login : User logged in successfully
+[2025-10-31 12:53:38] HomeController.Index : Page opened
+[2025-10-31 12:53:40] SettingsController.Index : User artart opened settings
+[2025-10-31 12:53:50] HomeController.Privacy : Page opened
+[2025-10-31 12:53:52] HomeController.Index : Page opened
+[2025-10-31 12:53:52] OrdersController.Index : Service is not selected
+[2025-10-31 12:54:11] OrdersController.Create : Service is not selected
+[2025-10-31 12:54:16] OrdersController.Create : Service is not selected
+[2025-10-31 12:54:19] OrdersController.Index : Service is not selected
+[2025-10-31 12:54:29] OrdersController.Create : Service is not selected
+[2025-10-31 12:54:32] OrdersController.Create : Service is not selected
+[2025-10-31 12:54:32] OrdersController.Create : Service is not selected
+[2025-10-31 12:54:33] OrdersController.Index : Service is not selected
+[2025-10-31 12:54:42] ServiceCentersController.Index : User 11738c0c-9bc5-4f8b-ab31-e26d86b886d9 opened ServiceCenters list
+[2025-10-31 12:54:46] OrdersController.Index : Service is not selected
+[2025-10-31 12:54:52] ServiceCentersController.Index : User 11738c0c-9bc5-4f8b-ab31-e26d86b886d9 opened ServiceCenters list
+[2025-10-31 12:55:08] ServiceCentersController.Create : ServiceCenter 'MasterSer' created by user 11738c0c-9bc5-4f8b-ab31-e26d86b886d9
+[2025-10-31 12:55:08] ServiceCentersController.Index : User 11738c0c-9bc5-4f8b-ab31-e26d86b886d9 opened ServiceCenters list
+[2025-10-31 12:55:15] ServiceCentersController.Edit(GET) : User opened edit page for ServiceCenter 27
+[2025-10-31 12:55:30] ServiceCentersController.Index : User 11738c0c-9bc5-4f8b-ab31-e26d86b886d9 opened ServiceCenters list
+[2025-10-31 12:55:34] OrdersController.Index : Service is not selected
+[2025-10-31 12:55:47] OrdersController.Create : Service is not selected
+[2025-10-31 12:55:51] ServiceCentersController.Select : User 11738c0c-9bc5-4f8b-ab31-e26d86b886d9 selected ServiceCenter 27
+[2025-10-31 12:56:00] OrdersController.Create : Order created
+[2025-10-31 12:56:05] ServiceCentersController.Index : User 11738c0c-9bc5-4f8b-ab31-e26d86b886d9 opened ServiceCenters list
+[2025-10-31 12:56:18] OrdersController.Create : Order created
+[2025-10-31 12:56:20] SettingsController.Index : User artart opened settings
+[2025-10-31 12:56:21] SettingsController.Logout : User logged out
+[2025-10-31 12:56:21] HomeController.Index : Page opened
+[2025-10-31 12:56:36] AuthController.Register : User created successfully
+[2025-10-31 12:56:36] HomeController.Index : Page opened
+[2025-10-31 12:56:38] ServiceCentersController.Index : User 2fd7d656-29f6-453b-9595-009968ff50e0 opened ServiceCenters list
+[2025-10-31 12:57:15] ServiceCentersController.Create : ServiceCenter 'vvv' created by user 2fd7d656-29f6-453b-9595-009968ff50e0
+[2025-10-31 12:57:15] ServiceCentersController.Index : User 2fd7d656-29f6-453b-9595-009968ff50e0 opened ServiceCenters list
+[2025-10-31 12:57:17] OrdersController.Index : Service is not selected
+[2025-10-31 12:57:26] OrdersController.Create : Service is not selected
+[2025-10-31 12:57:31] OrdersController.Create : Service is not selected
+[2025-10-31 12:57:32] OrdersController.Create : Service is not selected
+[2025-10-31 12:57:42] ServiceCentersController.Select : User 2fd7d656-29f6-453b-9595-009968ff50e0 selected ServiceCenter 28
+[2025-10-31 12:57:44] ServiceCentersController.Select : User 2fd7d656-29f6-453b-9595-009968ff50e0 selected ServiceCenter 28
+[2025-10-31 12:57:55] OrdersController.Create : Order created
+[2025-10-31 12:57:57] ServiceCentersController.Index : User 2fd7d656-29f6-453b-9595-009968ff50e0 opened ServiceCenters list
+[2025-10-31 12:58:03] ServiceCentersController.Create : ServiceCenter '12345' created by user 2fd7d656-29f6-453b-9595-009968ff50e0
+[2025-10-31 12:58:03] ServiceCentersController.Index : User 2fd7d656-29f6-453b-9595-009968ff50e0 opened ServiceCenters list
+[2025-10-31 13:03:46] ServiceCentersController.Select : User 2fd7d656-29f6-453b-9595-009968ff50e0 selected ServiceCenter 28
+[2025-10-31 13:03:46] ServiceCentersController.Index : User 2fd7d656-29f6-453b-9595-009968ff50e0 opened ServiceCenters list
+[2025-10-31 13:03:47] ServiceCentersController.Select : User 2fd7d656-29f6-453b-9595-009968ff50e0 selected ServiceCenter 29
+[2025-10-31 13:03:47] ServiceCentersController.Index : User 2fd7d656-29f6-453b-9595-009968ff50e0 opened ServiceCenters list
+[2025-10-31 13:07:33] HomeController.Index : Page opened
+[2025-10-31 13:07:37] SettingsController.Index : User artart2 opened settings
+[2025-10-31 13:07:40] SettingsController.Logout : User logged out
+[2025-10-31 13:07:40] HomeController.Index : Page opened
+[2025-10-31 13:07:45] LanguageController.Set : Culture set to en
+[2025-10-31 13:07:45] LanguageController.Set : Redirect to /Auth/Register
+[2025-10-31 13:07:45] LanguageController.Set : Culture set to ru
+[2025-10-31 13:07:45] LanguageController.Set : Redirect to /Auth/Register
+[2025-10-31 13:07:54] AuthController.Register : User created successfully
+[2025-10-31 13:07:54] HomeController.Index : Page opened
+[2025-10-31 13:07:57] ServiceCentersController.Index : User 26a92901-d8ed-4442-9fad-9de3ea826f51 opened ServiceCenters list
+[2025-10-31 13:08:00] ServiceCentersController.Create : ServiceCenter '123123' created by user 26a92901-d8ed-4442-9fad-9de3ea826f51
+[2025-10-31 13:08:00] ServiceCentersController.Select : User 26a92901-d8ed-4442-9fad-9de3ea826f51 selected ServiceCenter 30
+[2025-10-31 13:08:00] ServiceCentersController.Index : User 26a92901-d8ed-4442-9fad-9de3ea826f51 opened ServiceCenters list
+[2025-10-31 13:08:08] OrdersController.Create : Order created
+[2025-10-31 13:09:30] ServiceCentersController.Select : User 26a92901-d8ed-4442-9fad-9de3ea826f51 selected ServiceCenter 30
+[2025-10-31 13:09:33] ServiceCentersController.Index : User 26a92901-d8ed-4442-9fad-9de3ea826f51 opened ServiceCenters list
+[2025-10-31 13:11:09] ServiceCentersController.Index : User 26a92901-d8ed-4442-9fad-9de3ea826f51 opened ServiceCenters list

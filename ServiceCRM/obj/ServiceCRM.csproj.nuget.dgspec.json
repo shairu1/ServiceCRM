@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\shair\\Desktop\\CHSU\\3 year\\2с_С#-программирование\\ServiceCRM\\ServiceCRM\\ServiceCRM.csproj": {}
+    "c:\\Users\\shair\\Desktop\\CHSU\\3 year\\2с_С#-программирование\\ServiceCRM\\ServiceCRM\\ServiceCRM.csproj": {}
   },
   "projects": {
-    "C:\\Users\\shair\\Desktop\\CHSU\\3 year\\2с_С#-программирование\\ServiceCRM\\ServiceCRM\\ServiceCRM.csproj": {
+    "c:\\Users\\shair\\Desktop\\CHSU\\3 year\\2с_С#-программирование\\ServiceCRM\\ServiceCRM\\ServiceCRM.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\shair\\Desktop\\CHSU\\3 year\\2с_С#-программирование\\ServiceCRM\\ServiceCRM\\ServiceCRM.csproj",
+        "projectUniqueName": "c:\\Users\\shair\\Desktop\\CHSU\\3 year\\2с_С#-программирование\\ServiceCRM\\ServiceCRM\\ServiceCRM.csproj",
         "projectName": "ServiceCRM",
-        "projectPath": "C:\\Users\\shair\\Desktop\\CHSU\\3 year\\2с_С#-программирование\\ServiceCRM\\ServiceCRM\\ServiceCRM.csproj",
+        "projectPath": "c:\\Users\\shair\\Desktop\\CHSU\\3 year\\2с_С#-программирование\\ServiceCRM\\ServiceCRM\\ServiceCRM.csproj",
         "packagesPath": "C:\\Users\\shair\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\shair\\Desktop\\CHSU\\3 year\\2с_С#-программирование\\ServiceCRM\\ServiceCRM\\obj\\",
+        "outputPath": "c:\\Users\\shair\\Desktop\\CHSU\\3 year\\2с_С#-программирование\\ServiceCRM\\ServiceCRM\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -76,6 +76,24 @@
           ],
           "assetTargetFallback": true,
           "warn": true,
+          "downloadDependencies": [
+            {
+              "name": "Microsoft.AspNetCore.App.Ref",
+              "version": "[8.0.21, 8.0.21]"
+            },
+            {
+              "name": "Microsoft.NETCore.App.Host.win-x64",
+              "version": "[8.0.21, 8.0.21]"
+            },
+            {
+              "name": "Microsoft.NETCore.App.Ref",
+              "version": "[8.0.21, 8.0.21]"
+            },
+            {
+              "name": "Microsoft.WindowsDesktop.App.Ref",
+              "version": "[8.0.21, 8.0.21]"
+            }
+          ],
           "frameworkReferences": {
             "Microsoft.AspNetCore.App": {
               "privateAssets": "none"
@@ -84,7 +102,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.304/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.306/PortableRuntimeIdentifierGraph.json"
         }
       }
     }

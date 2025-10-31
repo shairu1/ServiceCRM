@@ -176,7 +176,7 @@
         },
         {
           "DockedWidth": 427,
-          "SelectedChildIndex": 7,
+          "SelectedChildIndex": 6,
           "Children": [
             {
               "$type": "Document",
@@ -189,21 +189,7 @@
               "ViewState": "AgIAAOAAAAAAAAAAAAAuwMwAAAA0AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-09-07T16:20:29.796Z",
-              "IsPinned": true,
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "Create.cshtml",
-              "DocumentMoniker": "C:\\Users\\shair\\Desktop\\CHSU\\3 year\\2\u0441_\u0421#-\u043F\u0440\u043E\u0433\u0440\u0430\u043C\u043C\u0438\u0440\u043E\u0432\u0430\u043D\u0438\u0435\\ServiceCRM\\ServiceCRM\\Views\\ServiceCenters\\Create.cshtml",
-              "RelativeDocumentMoniker": "Views\\ServiceCenters\\Create.cshtml",
-              "ToolTip": "C:\\Users\\shair\\Desktop\\CHSU\\3 year\\2\u0441_\u0421#-\u043F\u0440\u043E\u0433\u0440\u0430\u043C\u043C\u0438\u0440\u043E\u0432\u0430\u043D\u0438\u0435\\ServiceCRM\\ServiceCRM\\Views\\ServiceCenters\\Create.cshtml",
-              "RelativeToolTip": "Views\\ServiceCenters\\Create.cshtml",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-09-12T20:01:26.945Z",
-              "EditorCaption": ""
+              "IsPinned": true
             },
             {
               "$type": "Document",
@@ -273,10 +259,22 @@
               "RelativeDocumentMoniker": "Controllers\\ServiceCentersController.cs",
               "ToolTip": "C:\\Users\\shair\\Desktop\\CHSU\\3 year\\2\u0441_\u0421#-\u043F\u0440\u043E\u0433\u0440\u0430\u043C\u043C\u0438\u0440\u043E\u0432\u0430\u043D\u0438\u0435\\ServiceCRM\\ServiceCRM\\Controllers\\ServiceCentersController.cs",
               "RelativeToolTip": "Controllers\\ServiceCentersController.cs",
-              "ViewState": "AgIAAOkAAAAAAAAAAAAiwD8BAABWAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA4AAAAwAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-09-05T18:09:05.615Z",
               "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "Create.cshtml",
+              "DocumentMoniker": "C:\\Users\\shair\\Desktop\\CHSU\\3 year\\2\u0441_\u0421#-\u043F\u0440\u043E\u0433\u0440\u0430\u043C\u043C\u0438\u0440\u043E\u0432\u0430\u043D\u0438\u0435\\ServiceCRM\\ServiceCRM\\Views\\ServiceCenters\\Create.cshtml",
+              "RelativeDocumentMoniker": "Views\\ServiceCenters\\Create.cshtml",
+              "ToolTip": "C:\\Users\\shair\\Desktop\\CHSU\\3 year\\2\u0441_\u0421#-\u043F\u0440\u043E\u0433\u0440\u0430\u043C\u043C\u0438\u0440\u043E\u0432\u0430\u043D\u0438\u0435\\ServiceCRM\\ServiceCRM\\Views\\ServiceCenters\\Create.cshtml",
+              "RelativeToolTip": "Views\\ServiceCenters\\Create.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-09-12T20:01:26.945Z"
             },
             {
               "$type": "Document",
@@ -300,8 +298,7 @@
               "RelativeToolTip": "Views\\Shared\\_Layout.cshtml",
               "ViewState": "AgIAAP8AAAAAAAAAAAAhwOgAAABYAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-09-08T15:28:41.544Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-09-08T15:28:41.544Z"
             },
             {
               "$type": "Document",
