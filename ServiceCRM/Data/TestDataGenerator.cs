@@ -99,8 +99,8 @@ namespace ServiceCRM.Data
 
         private OrderStatus GetRandomStatus()
         {
-            var statuses = Enum.GetValues(typeof(OrderStatus));
-            return (OrderStatus)statuses.GetValue(_random.Next(statuses.Length));
+            var statuses = Enum.GetValues<OrderStatus>();
+            return statuses[_random.Next(statuses.Length)];
         }
 
         private string GetRandomItem(string[] array)
